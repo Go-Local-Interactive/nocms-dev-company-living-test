@@ -120,7 +120,7 @@ export function LifestyleCardsBlock({ title, body, mediaArray, settings }: Block
         )}
         {lead && (
           <div data-payload-subfield="body" className="max-w-[700px] mx-auto mb-8">
-            <p className="text-center font-body text-lg text-[var(--color-neutral-700)] leading-relaxed">
+            <p className="text-center font-body text-lg text-[var(--color-neutral-700)] leading-relaxed" data-role="subheading">
               {lead}
             </p>
           </div>
@@ -161,7 +161,7 @@ export function LifestyleCardsBlock({ title, body, mediaArray, settings }: Block
                     src={card.src}
                     alt={card.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                    loading="lazy" data-role="media"
                   />
                 ) : (
                   <div
@@ -187,19 +187,19 @@ export function LifestyleCardsBlock({ title, body, mediaArray, settings }: Block
 
         {photoGrid ? (
           <div className="flex flex-wrap justify-center gap-8">
-            <a href="/activities-events" className="btn-link inline-flex items-center gap-1 font-body text-base">
-              See Our Events Calendar <span aria-hidden="true">&rarr;</span>
+            <a href="/activities-events" className="btn-link inline-flex items-center gap-1 font-body text-base" data-role="cta">
+              See Our Events Calendar <span aria-hidden="true" data-role="text">&rarr;</span>
             </a>
-            <a href="/photo-video-gallery" className="btn-link inline-flex items-center gap-1 font-body text-base">
-              View Photo Gallery <span aria-hidden="true">&rarr;</span>
+            <a href="/photo-video-gallery" className="btn-link inline-flex items-center gap-1 font-body text-base" data-role="cta-2">
+              View Photo Gallery <span aria-hidden="true" data-role="text-2">&rarr;</span>
             </a>
           </div>
         ) : (
           <div className="flex flex-wrap justify-center gap-5 [@media(max-width:480px)]:flex-col">
-            <a href="/senior-living-guide" className="btn btn-primary [@media(max-width:480px)]:w-full">
+            <a href="/senior-living-guide" className="btn btn-primary [@media(max-width:480px)]:w-full" data-role="cta-3">
               Download Financial Guide
             </a>
-            <a href="/contact" className="btn btn-secondary [@media(max-width:480px)]:w-full">
+            <a href="/contact" className="btn btn-secondary [@media(max-width:480px)]:w-full" data-role="cta-4">
               Speak with Our Team
             </a>
           </div>

@@ -141,7 +141,7 @@ function reviewsFromBody(body: BlockProps["body"]): Review[] {
 /** Gold star row (fill = accent token). `count` stars, decorative. */
 function Stars({ count = 5, className }: { count?: number; className?: string }) {
   return (
-    <div className={`flex gap-[3px] ${className ?? ""}`} aria-hidden="true">
+    <div className={`flex gap-[3px] ${className ?? ""}`} aria-hidden="true" data-nocms-component="testimonial-block">
       {Array.from({ length: count }).map((_, i) => (
         <svg
           key={i}
@@ -183,7 +183,7 @@ function AuthorRow({
           src={src}
           alt={mediaAlt(photo) || name}
           className={`${cls} flex-shrink-0 rounded-full border-2 border-[var(--color-secondary-light)] object-cover`}
-          loading="lazy"
+          loading="lazy" data-role="media"
         />
       ) : (
         <span
@@ -288,7 +288,7 @@ function ReviewsVariant({ title, body, mediaArray }: BlockProps) {
               }`}
             >
               <Stars count={r.stars ?? 5} className="mb-4" />
-              <blockquote className="mb-6 flex-1 font-body text-base italic leading-[1.7] text-[var(--color-neutral-700)]">
+              <blockquote className="mb-6 flex-1 font-body text-base italic leading-[1.7] text-[var(--color-neutral-700)]" data-role="text">
                 &ldquo;{r.quote}&rdquo;
               </blockquote>
               <AuthorRow photo={photos[i]} name={r.name} relation={r.relation} index={i} />
@@ -337,15 +337,15 @@ function VideoVariant({ title, body, media, mediaArray, rating }: BlockProps) {
           <span className="font-body text-lg font-bold text-[var(--color-neutral-900)]">
             {score}
           </span>
-          <span className="font-body text-base text-[var(--color-neutral-500)] [@media(max-width:768px)]:hidden">
+          <span className="font-body text-base text-[var(--color-neutral-500)] [@media(max-width:768px)]:hidden" data-role="text-2">
             from 120+ reviews
           </span>
-          <span aria-hidden="true" className="font-body text-base text-[var(--color-neutral-500)]">
+          <span aria-hidden="true" className="font-body text-base text-[var(--color-neutral-500)]" data-role="text-3">
             &middot;
           </span>
           <a
             href={RATING_LINK_HREF}
-            className="font-body text-base text-[var(--color-primary)] underline underline-offset-[3px] hover:text-[var(--color-primary-dark)] focus-visible:rounded-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+            className="font-body text-base text-[var(--color-primary)] underline underline-offset-[3px] hover:text-[var(--color-primary-dark)] focus-visible:rounded-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]" data-role="text-4"
           >
             Read Reviews
           </a>
@@ -373,7 +373,7 @@ function VideoVariant({ title, body, media, mediaArray, rating }: BlockProps) {
                   src={posterSrc}
                   alt={posterAlt}
                   className="h-full w-full object-cover transition-transform duration-[400ms] group-hover/video:scale-[1.03]"
-                  loading="lazy"
+                  loading="lazy" data-role="media-2"
                 />
                 <span
                   aria-hidden="true"
@@ -390,7 +390,7 @@ function VideoVariant({ title, body, media, mediaArray, rating }: BlockProps) {
                 <span
                   aria-hidden="true"
                   title="Closed captions available"
-                  className="absolute bottom-3 right-3 z-[2] inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_srgb,var(--color-white)_45%,transparent)] bg-[color-mix(in_srgb,var(--color-rich-brown)_78%,transparent)] px-2.5 py-1 font-body text-base font-semibold tracking-[0.04em] text-[var(--color-white)]"
+                  className="absolute bottom-3 right-3 z-[2] inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_srgb,var(--color-white)_45%,transparent)] bg-[color-mix(in_srgb,var(--color-rich-brown)_78%,transparent)] px-2.5 py-1 font-body text-base font-semibold tracking-[0.04em] text-[var(--color-white)]" data-role="text-5"
                 >
                   CC
                 </span>
@@ -399,14 +399,14 @@ function VideoVariant({ title, body, media, mediaArray, rating }: BlockProps) {
 
             {/* Transcript disclosure. */}
             <details className="mt-5 font-body text-base">
-              <summary className="inline-block cursor-pointer py-2 font-semibold text-[var(--color-primary)] underline underline-offset-4 marker:hidden [&::-webkit-details-marker]:hidden">
+              <summary className="inline-block cursor-pointer py-2 font-semibold text-[var(--color-primary)] underline underline-offset-4 marker:hidden [&::-webkit-details-marker]:hidden" data-role="text-6">
                 Read full transcript
               </summary>
               <div className="mt-3 rounded-[4px] border-l-[3px] border-[var(--color-primary)] bg-[color-mix(in_srgb,var(--color-text)_4%,transparent)] px-5 py-4">
                 {DEFAULT_VIDEO.transcript.map((line, i) => (
                   <p
                     key={i}
-                    className="mb-3 font-body text-base leading-[1.7] text-[var(--color-neutral-700)] last:mb-0"
+                    className="mb-3 font-body text-base leading-[1.7] text-[var(--color-neutral-700)] last:mb-0" data-role="subheading-2"
                   >
                     {line}
                   </p>
@@ -417,7 +417,7 @@ function VideoVariant({ title, body, media, mediaArray, rating }: BlockProps) {
 
           {/* Content side. */}
           <div className="py-4">
-            <span className="mb-4 inline-flex items-center gap-1.5 font-body text-base font-semibold uppercase tracking-[0.05em] text-[var(--color-primary)]">
+            <span className="mb-4 inline-flex items-center gap-1.5 font-body text-base font-semibold uppercase tracking-[0.05em] text-[var(--color-primary)]" data-role="text-7">
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -430,7 +430,7 @@ function VideoVariant({ title, body, media, mediaArray, rating }: BlockProps) {
             </span>
             <p
               data-payload-subfield="body"
-              className="mb-7 border-l-[3px] border-[var(--color-primary-light)] pl-6 font-body text-[22px] italic leading-[1.6] text-[var(--color-neutral-700)] [@media(max-width:768px)]:pl-4 [@media(max-width:768px)]:text-lg"
+              className="mb-7 border-l-[3px] border-[var(--color-primary-light)] pl-6 font-body text-[22px] italic leading-[1.6] text-[var(--color-neutral-700)] [@media(max-width:768px)]:pl-4 [@media(max-width:768px)]:text-lg" data-role="subheading-3"
             >
               {quote}
             </p>
@@ -475,7 +475,7 @@ function ShelfVariant({ title, body, mediaArray }: BlockProps) {
                 style={{ backgroundColor: SHELF_CARD_TONES[i % SHELF_CARD_TONES.length] }}
               >
                 <Stars count={r.stars ?? 5} className="mb-4" />
-                <p className="mb-6 font-body text-base italic leading-[1.7] text-[var(--color-neutral-700)]">
+                <p className="mb-6 font-body text-base italic leading-[1.7] text-[var(--color-neutral-700)]" data-role="subheading-4">
                   {r.quote}
                 </p>
                 <AuthorRow photo={photos[i]} name={r.name} relation={r.relation} index={i} />

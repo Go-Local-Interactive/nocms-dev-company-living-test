@@ -35,8 +35,8 @@ export default async function DynamicPage({ params }: Props) {
   if (slug === "_placeholder") {
     return (
       <div className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-3xl font-semibold tracking-tight">Page</h1>
-        <p className="mt-4 text-zinc-600">Create a page in the CMS to publish it here.</p>
+        <h1 className="text-3xl font-semibold tracking-tight" data-role="heading-2">Page</h1>
+        <p className="mt-4 text-zinc-600" data-role="text">Create a page in the CMS to publish it here.</p>
       </div>
     );
   }
@@ -57,7 +57,7 @@ export default async function DynamicPage({ params }: Props) {
             >
               {page.title}
             </h1>
-            <p className="mt-4 text-muted">
+            <p className="mt-4 text-muted" data-role="text-2">
               This page has no blocks yet. Add a Hero or Content Block in the CMS to fill it in.
             </p>
           </div>

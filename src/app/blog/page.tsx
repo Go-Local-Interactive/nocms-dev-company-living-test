@@ -69,18 +69,18 @@ export default async function BlogIndexPage() {
                 </Link>
               </li>
               <li className="flex items-center">
-                <span aria-hidden="true" className="mx-2 font-normal text-white/65">/</span>
+                <span aria-hidden="true" className="mx-2 font-normal text-white/65" data-role="text">/</span>
                 <Link href="/blog" className="text-white/85 no-underline transition-colors hover:text-white">
                   Resources
                 </Link>
               </li>
               <li className="flex items-center">
-                <span aria-hidden="true" className="mx-2 font-normal text-white/65">/</span>
-                <span aria-current="page" className="font-semibold text-white">Featured</span>
+                <span aria-hidden="true" className="mx-2 font-normal text-white/65" data-role="text-2">/</span>
+                <span aria-current="page" className="font-semibold text-white" data-role="text-3">Featured</span>
               </li>
             </ol>
           </nav>
-          <h1 className="sr-only">Resources &amp; Insights</h1>
+          <h1 className="sr-only" data-role="heading">Resources &amp; Insights</h1>
 
           {featured ? (
             <div className="blog-on-dark">
@@ -91,7 +91,7 @@ export default async function BlogIndexPage() {
               />
             </div>
           ) : (
-            <p className="max-w-2xl text-lg text-sand/85">
+            <p className="max-w-2xl text-lg text-sand/85" data-role="subheading">
               New articles are on the way. Check back soon for resources, guides,
               and insights from {skinConfig.brandName}.
             </p>
@@ -109,7 +109,7 @@ export default async function BlogIndexPage() {
 
             <div className="flex flex-col gap-9">
               {items.length === 0 ? (
-                <p className="text-base text-muted">No articles yet. Check back soon.</p>
+                <p className="text-base text-muted" data-role="subheading-2">No articles yet. Check back soon.</p>
               ) : (
                 <Suspense
                   fallback={<div className="min-h-[300px]" aria-hidden="true" />}

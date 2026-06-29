@@ -165,7 +165,7 @@ export function BlogCard({ post, variant = "default", docAttrs, className }: Blo
             src={cover.src}
             alt={cover.alt}
             loading="lazy"
-            className="w-full h-full object-cover block transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover block transition-transform duration-500 group-hover:scale-105" data-role="media-2"
           />
         ) : (
           <div
@@ -182,7 +182,7 @@ export function BlogCard({ post, variant = "default", docAttrs, className }: Blo
           </span>
         )}
 
-        <h3 className={v.title}>
+        <h3 className={v.title} data-role="heading-2">
           {/* Title link covers the whole card via ::after-equivalent inset
               anchor; tabindex on the arrow is -1 so the title is the one stop. */}
           <Link
@@ -214,7 +214,7 @@ export function BlogCard({ post, variant = "default", docAttrs, className }: Blo
                   src={post.author.photoSrc}
                   alt={post.author.photoAlt ?? ""}
                   loading="lazy"
-                  className={`${v.avatar} rounded-full object-cover border-2 border-primary-light shrink-0`}
+                  className={`${v.avatar} rounded-full object-cover border-2 border-primary-light shrink-0`} data-role="media-3"
                 />
               )}
               <div className="flex flex-col">

@@ -271,7 +271,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
 
             {/* Pricing note — sage callout */}
             <div className="mb-8 rounded-r-[var(--radius)] border-l-4 border-primary bg-section-sage px-6 py-5 font-body text-base leading-[1.6] text-neutral-700">
-              <strong className="text-neutral-900">
+              <strong className="text-neutral-900" data-role="text">
                 Transparent pricing, always.
               </strong>{" "}
               Your quote will include all-inclusive monthly rates with no hidden
@@ -288,7 +288,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                 aria-live="assertive"
                 className="mb-7 rounded-[var(--radius)] border-2 border-error bg-error-light px-6 py-5"
               >
-                <h3 className="mb-3 flex items-center gap-2 font-heading text-lg font-bold text-error">
+                <h3 className="mb-3 flex items-center gap-2 font-heading text-lg font-bold text-error" data-role="heading-2">
                   <svg
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -430,7 +430,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                     );
                   })}
                 </div>
-                <p className="mt-2.5 font-body text-base text-neutral-700">
+                <p className="mt-2.5 font-body text-base text-neutral-700" data-role="subheading-2">
                   We&rsquo;ll reach out within one business day using your
                   preferred method &mdash; no pressure, no obligation.
                 </p>
@@ -520,13 +520,13 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
 
               <button
                 type="submit"
-                className="btn btn-secondary mt-2 w-full px-8 py-4 text-lg"
+                className="btn btn-secondary mt-2 w-full px-8 py-4 text-lg" data-role="cta"
               >
                 Request My Quote
               </button>
             </form>
 
-            <p className="mt-4 text-center font-body text-base text-neutral-500">
+            <p className="mt-4 text-center font-body text-base text-neutral-500" data-role="subheading-3">
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -560,7 +560,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="8 12 11 15 16 9" />
               </svg>
-              <p className="mx-auto mb-8 max-w-[400px] font-body text-base text-neutral-700">
+              <p className="mx-auto mb-8 max-w-[400px] font-body text-base text-neutral-700" data-role="subheading-4">
                 We&apos;ve received your pricing request. Our admissions team
                 will prepare a personalized quote and reach out within one
                 business day.
@@ -569,7 +569,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
 
             {/* What Happens Next */}
             <div className="mt-12 border-t border-neutral-100 pt-12">
-              <h3 className="mb-9 text-center font-heading text-2xl text-neutral-900">
+              <h3 className="mb-9 text-center font-heading text-2xl text-neutral-900" data-role="heading-3">
                 What Happens Next
               </h3>
               {NEXT_STEPS.map((s, i) => (
@@ -578,10 +578,10 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                     {i + 1}
                   </div>
                   <div>
-                    <h4 className="mb-1 font-heading text-base text-neutral-900">
+                    <h4 className="mb-1 font-heading text-base text-neutral-900" data-role="heading-4">
                       {s.title}
                     </h4>
-                    <p className="m-0 font-body text-base leading-[1.6] text-neutral-700">
+                    <p className="m-0 font-body text-base leading-[1.6] text-neutral-700" data-role="subheading-5">
                       {s.body}
                     </p>
                   </div>
@@ -591,15 +591,15 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
 
             {/* Testimonial */}
             <figure className="mt-10 rounded-xl border-l-4 border-primary bg-section-sage p-8">
-              <blockquote className="mb-4 font-heading text-lg italic leading-[1.7] text-neutral-700">
+              <blockquote className="mb-4 font-heading text-lg italic leading-[1.7] text-neutral-700" data-role="text-2">
                 &ldquo;The pricing was straightforward and honest &mdash; no
                 hidden fees, no surprises. They even helped us figure out that
                 Dad qualified for VA benefits we didn&apos;t know about. That
                 made all the difference.&rdquo;
               </blockquote>
-              <figcaption className="font-body text-base font-semibold text-neutral-900">
+              <figcaption className="font-body text-base font-semibold text-neutral-900" data-role="text-3">
                 Karen L.
-                <span className="mt-0.5 block font-normal text-neutral-500">
+                <span className="mt-0.5 block font-normal text-neutral-500" data-role="text-4">
                   Daughter of current resident
                 </span>
               </figcaption>
@@ -607,7 +607,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
 
             {/* Alternative contact */}
             <div className="mt-10 border-t border-neutral-100 pt-10">
-              <h3 className="mb-5 text-center font-heading text-xl text-neutral-900">
+              <h3 className="mb-5 text-center font-heading text-xl text-neutral-900" data-role="heading-5">
                 Prefer to Reach Us Directly?
               </h3>
               <div className="flex items-center gap-4 border-b border-neutral-100 py-4">
@@ -626,7 +626,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                   </svg>
                 </div>
                 <div className="font-body text-base">
-                  <strong className="block text-neutral-900">Call Us</strong>
+                  <strong className="block text-neutral-900" data-role="text-5">Call Us</strong>
                   {skinConfig.contactPhone && (
                     <a
                       href={telHref(skinConfig.contactPhone)}
@@ -635,7 +635,7 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                       {skinConfig.contactPhone}
                     </a>
                   )}
-                  <span className="text-neutral-500">
+                  <span className="text-neutral-500" data-role="text-6">
                     {" "}
                     &mdash; Available 8am &ndash; 6pm daily
                   </span>
@@ -658,16 +658,16 @@ export function RequestPricingFormBlock({ title, body }: BlockProps) {
                   </svg>
                 </div>
                 <div className="font-body text-base">
-                  <strong className="block text-neutral-900">
+                  <strong className="block text-neutral-900" data-role="text-7">
                     Send a Message
                   </strong>
                   <a
                     href="/contact-us"
-                    className="text-primary underline underline-offset-[3px]"
+                    className="text-primary underline underline-offset-[3px]" data-role="text-8"
                   >
                     Contact Us Online
                   </a>
-                  <span className="text-neutral-500">
+                  <span className="text-neutral-500" data-role="text-9">
                     {" "}
                     &mdash; We respond within 24 hours
                   </span>
@@ -700,7 +700,7 @@ function Field({
       <label htmlFor={id} className={LABEL_CLASS}>
         {label}
         {optional && (
-          <span className="font-normal text-neutral-500"> (optional)</span>
+          <span className="font-normal text-neutral-500" data-role="text-10"> (optional)</span>
         )}
       </label>
       {children}

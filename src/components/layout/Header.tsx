@@ -38,7 +38,7 @@ export function Header({ variant = "full" }: HeaderProps) {
           >
             {logoSrc ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={logoSrc} alt={logoAlt} className="h-11 w-auto object-contain" />
+              <img src={logoSrc} alt={logoAlt} className="h-11 w-auto object-contain" data-role="media" />
             ) : (
               <span className="font-heading text-lg font-bold text-white">
                 {brandName}
@@ -77,7 +77,7 @@ export function Header({ variant = "full" }: HeaderProps) {
         >
           {logoSrc ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logoSrc} alt={logoAlt} className="h-14 w-auto object-contain" />
+            <img src={logoSrc} alt={logoAlt} className="h-14 w-auto object-contain" data-role="media-2" />
           ) : (
             <span className="font-heading text-xl font-bold text-white">
               {brandName}
@@ -119,7 +119,7 @@ export function Header({ variant = "full" }: HeaderProps) {
           <a
             href="/schedule-tour"
             data-tour-trigger
-            className="btn hidden bg-sand text-primary-dark hover:-translate-y-0.5 hover:bg-section-cream hover:shadow-[0_4px_12px_color-mix(in_srgb,var(--color-text)_15%,transparent)] md:inline-flex"
+            className="btn hidden bg-sand text-primary-dark hover:-translate-y-0.5 hover:bg-section-cream hover:shadow-[0_4px_12px_color-mix(in_srgb,var(--color-text)_15%,transparent)] md:inline-flex" data-role="text"
           >
             Schedule a Tour
           </a>

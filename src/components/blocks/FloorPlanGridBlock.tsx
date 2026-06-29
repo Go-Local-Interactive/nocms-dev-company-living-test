@@ -269,7 +269,7 @@ export function FloorPlanGridBlock({ title, body, mediaArray, settings }: BlockP
                       src={photoSrc}
                       alt={mediaAlt(photo) || `${plan.name} floor plan`}
                       className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
+                      loading="lazy" data-role="media"
                     />
                   ) : (
                     <div
@@ -287,7 +287,7 @@ export function FloorPlanGridBlock({ title, body, mediaArray, settings }: BlockP
                 </div>
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-8">
-                  <h3 className="mb-4 font-heading text-2xl font-bold text-text">
+                  <h3 className="mb-4 font-heading text-2xl font-bold text-text" data-role="heading-2">
                     {plan.name}
                   </h3>
                   {plan.specs.length > 0 && (
@@ -310,7 +310,7 @@ export function FloorPlanGridBlock({ title, body, mediaArray, settings }: BlockP
                     </p>
                   )}
                   {plan.tagline && (
-                    <p className="mb-6 font-body text-base italic text-muted">
+                    <p className="mb-6 font-body text-base italic text-muted" data-role="subheading-2">
                       {plan.tagline}
                     </p>
                   )}
@@ -323,7 +323,7 @@ export function FloorPlanGridBlock({ title, body, mediaArray, settings }: BlockP
                         >
                           <span
                             aria-hidden="true"
-                            className="mt-0.5 shrink-0 font-bold text-primary"
+                            className="mt-0.5 shrink-0 font-bold text-primary" data-role="text"
                           >
                             &#10003;
                           </span>
@@ -334,10 +334,10 @@ export function FloorPlanGridBlock({ title, body, mediaArray, settings }: BlockP
                   )}
                   <span
                     aria-hidden="true"
-                    className="mt-auto inline-flex items-center gap-1 font-body text-base font-semibold text-primary transition-all group-hover:gap-2"
+                    className="mt-auto inline-flex items-center gap-1 font-body text-base font-semibold text-primary transition-all group-hover:gap-2" data-role="text-2"
                   >
                     View details
-                    <span aria-hidden="true">&rarr;</span>
+                    <span aria-hidden="true" data-role="text-3">&rarr;</span>
                   </span>
                 </div>
               </a>

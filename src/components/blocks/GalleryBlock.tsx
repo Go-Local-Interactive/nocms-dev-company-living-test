@@ -64,7 +64,7 @@ function Card({
   return (
     <figure
       {...(real ? { "data-array-index": index } : {})}
-      className="group relative m-0 w-[340px] min-w-[340px] max-w-[340px] flex-shrink-0 overflow-hidden rounded-[var(--radius)] shadow-[var(--shadow-md)] transition-[transform,box-shadow] duration-[350ms] hover:-translate-y-1.5 hover:shadow-[var(--shadow-lg)] [@media(max-width:768px)]:w-[280px] [@media(max-width:768px)]:min-w-[280px] [@media(max-width:768px)]:max-w-[280px] [@media(max-width:480px)]:w-[260px] [@media(max-width:480px)]:min-w-[260px] [@media(max-width:480px)]:max-w-[260px]"
+      className="group relative m-0 w-[340px] min-w-[340px] max-w-[340px] flex-shrink-0 overflow-hidden rounded-[var(--radius)] shadow-[var(--shadow-md)] transition-[transform,box-shadow] duration-[350ms] hover:-translate-y-1.5 hover:shadow-[var(--shadow-lg)] [@media(max-width:768px)]:w-[280px] [@media(max-width:768px)]:min-w-[280px] [@media(max-width:768px)]:max-w-[280px] [@media(max-width:480px)]:w-[260px] [@media(max-width:480px)]:min-w-[260px] [@media(max-width:480px)]:max-w-[260px]" data-nocms-component="gallery-block"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -72,7 +72,7 @@ function Card({
         alt={card.alt}
         loading="lazy"
         className="block aspect-[4/3] h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-        {...(real ? { "data-payload-subfield": `mediaArray.${index}` } : {})}
+        {...(real ? { "data-payload-subfield": `mediaArray.${index}` } : {})} data-role="media"
       />
       <figcaption
         className="absolute inset-x-0 bottom-0 px-5 pt-5 pb-[18px] text-[16px] font-semibold tracking-[0.02em] text-[var(--color-white)]"

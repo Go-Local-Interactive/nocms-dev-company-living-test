@@ -40,14 +40,14 @@ export interface FullbleedHeroProps {
 
 function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 text-base" data-role="breadcrumb">
+    <nav aria-label="Breadcrumb" className="mb-6 text-base" data-role="breadcrumb" data-nocms-component="fullbleed-hero">
       <ol className="m-0 flex flex-wrap items-center justify-center gap-0 p-0">
         {items.map((item, i) => {
           const last = i === items.length - 1;
           return (
             <li key={`${item.label}-${i}`} className="flex items-center">
               {i > 0 && (
-                <span aria-hidden="true" className="mx-2 font-normal text-white/65">
+                <span aria-hidden="true" className="mx-2 font-normal text-white/65" data-role="text">
                   /
                 </span>
               )}
@@ -95,7 +95,7 @@ export function FullbleedHero({
           alt={imageAlt}
           {...(editable ? { "data-payload-subfield": "media", "data-role": "media" } : { role: "presentation" })}
           className="absolute inset-0 z-0 h-full w-full object-cover"
-          loading="eager"
+          loading="eager" data-role="media"
         />
       )}
       {!noMedia && (
@@ -114,14 +114,14 @@ export function FullbleedHero({
         <h1
           {...head}
           className="mb-4 font-heading font-bold leading-[1.1] text-white text-[2rem] min-[481px]:text-[2.5rem] min-[769px]:text-[3.5rem]"
-          style={{ textWrap: "balance" } as React.CSSProperties}
+          style={{ textWrap: "balance" } as React.CSSProperties} data-role="heading"
         >
           {title}
         </h1>
         {subtitle && (
           <p
             {...sub}
-            className="mx-auto mb-12 max-w-[70ch] font-body font-light leading-relaxed text-white/95 text-base min-[769px]:text-xl"
+            className="mx-auto mb-12 max-w-[70ch] font-body font-light leading-relaxed text-white/95 text-base min-[769px]:text-xl" data-role="subheading"
           >
             {subtitle}
           </p>

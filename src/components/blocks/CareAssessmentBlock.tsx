@@ -78,7 +78,7 @@ function Glyph({ children }: { children: React.ReactNode }) {
       stroke="currentColor"
       strokeWidth={2}
       strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeLinejoin="round" data-nocms-component="care-assessment-block"
     >
       {children}
     </svg>
@@ -761,10 +761,10 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                 <div className="mb-2 font-body text-base font-semibold uppercase tracking-[0.05em] text-primary">
                   Question {i + 1} of {QUESTIONS.length}
                 </div>
-                <h2 className="mb-2 text-left font-heading text-[1.75rem] font-bold leading-tight text-neutral-900">
+                <h2 className="mb-2 text-left font-heading text-[1.75rem] font-bold leading-tight text-neutral-900" data-role="heading-2">
                   {q.heading}
                 </h2>
-                <p className="mb-8 font-body text-base leading-[1.5] text-neutral-500">
+                <p className="mb-8 font-body text-base leading-[1.5] text-neutral-500" data-role="subheading">
                   {q.subtitle}
                 </p>
 
@@ -837,7 +837,7 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                     <button
                       type="button"
                       onClick={goBack}
-                      className="inline-flex items-center gap-1.5 rounded-[var(--radius)] px-5 py-3 font-body text-base font-semibold text-neutral-500 transition-colors hover:text-neutral-900 [@media(max-width:480px)]:w-full [@media(max-width:480px)]:justify-center"
+                      className="inline-flex items-center gap-1.5 rounded-[var(--radius)] px-5 py-3 font-body text-base font-semibold text-neutral-500 transition-colors hover:text-neutral-900 [@media(max-width:480px)]:w-full [@media(max-width:480px)]:justify-center" data-role="text"
                     >
                       <Chevron dir="left" /> Back
                     </button>
@@ -848,7 +848,7 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                     type="button"
                     onClick={goNext}
                     disabled={selected[i] === undefined}
-                    className="ml-auto inline-flex min-h-12 items-center gap-2 rounded-[var(--radius)] bg-secondary px-8 py-3.5 font-body text-base font-semibold text-background transition-[background,transform] hover:bg-secondary-dark hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 [@media(max-width:480px)]:w-full [@media(max-width:480px)]:justify-center"
+                    className="ml-auto inline-flex min-h-12 items-center gap-2 rounded-[var(--radius)] bg-secondary px-8 py-3.5 font-body text-base font-semibold text-background transition-[background,transform] hover:bg-secondary-dark hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0 [@media(max-width:480px)]:w-full [@media(max-width:480px)]:justify-center" data-role="cta"
                   >
                     {isLast ? "See My Results" : "Next"} <Chevron dir="right" />
                   </button>
@@ -873,13 +873,13 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                 </svg>
                 Assessment Complete
               </div>
-              <h2 className="mb-3 text-left font-heading text-[1.75rem] font-bold leading-tight text-neutral-900">
+              <h2 className="mb-3 text-left font-heading text-[1.75rem] font-bold leading-tight text-neutral-900" data-role="heading-3">
                 {rec.heading}
               </h2>
-              <p className="mb-3 font-body text-[17px] leading-[1.6] text-neutral-700">
+              <p className="mb-3 font-body text-[17px] leading-[1.6] text-neutral-700" data-role="subheading-2">
                 {rec.description}
               </p>
-              <p className="mb-8 font-body text-[17px] leading-[1.6] text-neutral-700">
+              <p className="mb-8 font-body text-[17px] leading-[1.6] text-neutral-700" data-role="subheading-3">
                 This is just a starting point &mdash; not a permanent decision.
                 Needs change over time, and transitioning between care levels at
                 Golden Oaks is seamless &mdash; your loved one stays in a
@@ -889,10 +889,10 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
 
               {/* Recommendation card */}
               <div className="mb-8 rounded-[var(--radius)] border-l-4 border-primary bg-section-sage p-7">
-                <h3 className="mb-2 font-heading text-[1.75rem] font-bold leading-tight text-primary-dark">
+                <h3 className="mb-2 font-heading text-[1.75rem] font-bold leading-tight text-primary-dark" data-role="heading-4">
                   {rec.title}
                 </h3>
-                <p className="m-0 font-body text-base leading-[1.5] text-neutral-700">
+                <p className="m-0 font-body text-base leading-[1.5] text-neutral-700" data-role="subheading-4">
                   {rec.body}
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-3 [@media(max-width:768px)]:grid-cols-1">
@@ -919,10 +919,10 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
 
               <div className="my-8 h-px bg-neutral-100" />
 
-              <h3 className="mb-2 text-center font-heading text-[1.75rem] font-bold leading-tight text-neutral-900">
+              <h3 className="mb-2 text-center font-heading text-[1.75rem] font-bold leading-tight text-neutral-900" data-role="heading-5">
                 Get Your Personalized Care Plan
               </h3>
-              <p className="mb-5 text-center font-body text-base text-neutral-500">
+              <p className="mb-5 text-center font-body text-base text-neutral-500" data-role="subheading-5">
                 A care advisor will review your results and follow up with a
                 detailed recommendation tailored to your family&apos;s needs.
               </p>
@@ -936,7 +936,7 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                   aria-live="assertive"
                   className="mb-7 rounded-[var(--radius)] border-2 border-error bg-error-light px-6 py-5"
                 >
-                  <h4 className="mb-3 flex items-center gap-2 font-heading text-lg font-bold text-error">
+                  <h4 className="mb-3 flex items-center gap-2 font-heading text-lg font-bold text-error" data-role="heading-6">
                     <svg
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -1042,11 +1042,11 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
 
                 <button
                   type="submit"
-                  className="col-span-full mt-2 min-h-12 rounded-[var(--radius)] bg-secondary px-4 py-4 font-body text-base font-semibold text-background transition-[background,transform] hover:bg-secondary-dark hover:-translate-y-px"
+                  className="col-span-full mt-2 min-h-12 rounded-[var(--radius)] bg-secondary px-4 py-4 font-body text-base font-semibold text-background transition-[background,transform] hover:bg-secondary-dark hover:-translate-y-px" data-role="cta-2"
                 >
                   Send My Results to a Care Advisor
                 </button>
-                <p className="col-span-full text-center font-body text-base text-neutral-500">
+                <p className="col-span-full text-center font-body text-base text-neutral-500" data-role="subheading-6">
                   No obligation. No spam. Just helpful guidance from our team.
                 </p>
               </form>
@@ -1056,14 +1056,14 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                 <button
                   type="button"
                   onClick={goBack}
-                  className="inline-flex items-center gap-1.5 font-body text-base font-semibold text-neutral-500 transition-colors hover:text-neutral-900"
+                  className="inline-flex items-center gap-1.5 font-body text-base font-semibold text-neutral-500 transition-colors hover:text-neutral-900" data-role="text-2"
                 >
                   <Chevron dir="left" /> Back to questions
                 </button>
                 {skinConfig.contactPhone && (
                   <a
                     href={telHref(skinConfig.contactPhone)}
-                    className="inline-flex items-center justify-center gap-2 font-body text-base font-semibold text-primary transition-colors hover:text-primary-dark"
+                    className="inline-flex items-center justify-center gap-2 font-body text-base font-semibold text-primary transition-colors hover:text-primary-dark" data-role="text-3"
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -1102,15 +1102,15 @@ export function CareAssessmentBlock({ title, body }: BlockProps) {
                   <polyline points="9 12 12 15 16 10" />
                 </svg>
               </div>
-              <h2 className="mb-3 text-center font-heading text-[1.75rem] font-bold leading-tight text-neutral-900">
+              <h2 className="mb-3 text-center font-heading text-[1.75rem] font-bold leading-tight text-neutral-900" data-role="heading-7">
                 You&apos;re All Set!
               </h2>
-              <p className="mx-auto mb-7 max-w-[420px] font-body text-[17px] text-neutral-500">
+              <p className="mx-auto mb-7 max-w-[420px] font-body text-[17px] text-neutral-500" data-role="subheading-7">
                 A care advisor will reach out within 24 hours with your
                 personalized care plan. In the meantime, feel free to explore
                 our community.
               </p>
-              <a href="/" className="btn btn-primary px-7 py-3.5 text-base">
+              <a href="/" className="btn btn-primary px-7 py-3.5 text-base" data-role="cta-3">
                 Explore {skinConfig.brandName}
               </a>
             </div>

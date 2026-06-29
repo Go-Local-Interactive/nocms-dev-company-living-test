@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "components": {
+    "accordion-block": {
+      "file": "src/components/blocks/AccordionBlock.tsx",
+      "tag": "TabbedAccordion"
+    },
+    "accreditation-bar": {
+      "file": "src/components/blocks/AccreditationBarBlock.tsx",
+      "tag": "section"
+    },
+    "amenity-grid": {
+      "file": "src/components/blocks/AmenityGridBlock.tsx",
+      "tag": "section"
+    },
+    "assessment-callout-block": {
+      "file": "src/components/blocks/AssessmentCalloutBlock.tsx",
+      "tag": "svg"
+    },
+    "banner": {
+      "file": "src/components/blocks/Baseline.tsx",
+      "tag": "section"
+    },
+    "blog-card": {
+      "file": "src/components/blocks/BlogCard.tsx",
+      "tag": "article"
+    },
+    "blog-controls": {
+      "file": "src/components/blocks/BlogControls.tsx",
+      "tag": "form"
+    },
+    "blog-sidebar": {
+      "file": "src/components/blocks/BlogSidebar.tsx",
+      "tag": "aside"
+    },
+    "crisis-callout": {
+      "file": "src/components/blocks/CalloutBandBlock.tsx",
+      "tag": "section"
+    },
+    "card-carousel": {
+      "file": "src/components/blocks/CardCarouselBlock.tsx",
+      "tag": "section"
+    },
+    "care-assessment-block": {
+      "file": "src/components/blocks/CareAssessmentBlock.tsx",
+      "tag": "svg"
+    },
+    "care-level-card": {
+      "file": "src/components/blocks/CareLevelCardBlock.tsx",
+      "tag": "section"
+    },
+    "care-level-grid": {
+      "file": "src/components/blocks/CareLevelGridBlock.tsx",
+      "tag": "section"
+    },
+    "care-level-nav": {
+      "file": "src/components/blocks/CareLevelNavBlock.tsx",
+      "tag": "nav"
+    },
+    "content-blocks-block": {
+      "file": "src/components/blocks/ContentBlocksBlock.tsx",
+      "tag": "div"
+    },
+    "content-intro": {
+      "file": "src/components/blocks/ContentIntroBlock.tsx",
+      "tag": "section"
+    },
+    "events-list": {
+      "file": "src/components/blocks/EventsListBlock.tsx",
+      "tag": "section"
+    },
+    "feature-sections": {
+      "file": "src/components/blocks/FeatureSectionsBlock.tsx",
+      "tag": "section"
+    },
+    "callout-band": {
+      "file": "src/components/blocks/FinalCtaBlock.tsx",
+      "tag": "section"
+    },
+    "floor-plan-card": {
+      "file": "src/components/blocks/FloorPlanCardBlock.tsx",
+      "tag": "section"
+    },
+    "floor-plan-grid": {
+      "file": "src/components/blocks/FloorPlanGridBlock.tsx",
+      "tag": "section"
+    },
+    "gallery-block": {
+      "file": "src/components/blocks/GalleryBlock.tsx",
+      "tag": "figure"
+    },
+    "hero-block": {
+      "file": "src/components/blocks/HeroBlock.tsx",
+      "tag": "svg"
+    },
+    "icon-card-grid": {
+      "file": "src/components/blocks/IconCardGridBlock.tsx",
+      "tag": "section"
+    },
+    "lexical": {
+      "file": "src/components/blocks/Lexical.tsx",
+      "tag": "div"
+    },
+    "lifestyle-cards": {
+      "file": "src/components/blocks/LifestyleCardsBlock.tsx",
+      "tag": "section"
+    },
+    "pricing-cards": {
+      "file": "src/components/blocks/PricingCardsBlock.tsx",
+      "tag": "section"
+    },
+    "render-blocks": {
+      "file": "src/components/blocks/RenderBlocks.tsx",
+      "tag": "div"
+    },
+    "request-pricing-form": {
+      "file": "src/components/blocks/RequestPricingFormBlock.tsx",
+      "tag": "section"
+    },
+    "resource-cards": {
+      "file": "src/components/blocks/ResourceCardsBlock.tsx",
+      "tag": "section"
+    },
+    "search-results": {
+      "file": "src/components/blocks/SearchResultsBlock.tsx",
+      "tag": "section"
+    },
+    "tour-form": {
+      "file": "src/components/blocks/SplitFormBlock.tsx",
+      "tag": "section"
+    },
+    "stats-bar": {
+      "file": "src/components/blocks/StatsBarBlock.tsx",
+      "tag": "section"
+    },
+    "accordion": {
+      "file": "src/components/blocks/TabbedAccordion.tsx",
+      "tag": "section"
+    },
+    "team-grid": {
+      "file": "src/components/blocks/TeamGridBlock.tsx",
+      "tag": "section"
+    },
+    "testimonial-block": {
+      "file": "src/components/blocks/TestimonialBlock.tsx",
+      "tag": "div"
+    },
+    "testimonial-shelf.client": {
+      "file": "src/components/blocks/TestimonialShelf.client.tsx",
+      "tag": "div"
+    },
+    "timeline": {
+      "file": "src/components/blocks/TimelineBlock.tsx",
+      "tag": "section"
+    },
+    "tour-form-block": {
+      "file": "src/components/blocks/TourFormBlock.tsx",
+      "tag": "SplitFormBlock"
+    },
+    "urgency-strip": {
+      "file": "src/components/blocks/UrgencyStripBlock.tsx",
+      "tag": "section"
+    },
+    "video-testimonial.client": {
+      "file": "src/components/blocks/VideoTestimonial.client.tsx",
+      "tag": "div"
+    },
+    "content/cta-banner": {
+      "file": "src/components/content/CTABanner.tsx",
+      "tag": "section"
+    },
+    "content/care-cards": {
+      "file": "src/components/content/CareCards.tsx",
+      "tag": "SectionWrapper"
+    },
+    "content/contact-form": {
+      "file": "src/components/content/ContactForm.tsx",
+      "tag": "div"
+    },
+    "content/faq-accordion": {
+      "file": "src/components/content/FaqAccordion.tsx",
+      "tag": "section"
+    },
+    "content/photo-grid": {
+      "file": "src/components/content/PhotoGrid.tsx",
+      "tag": "section"
+    },
+    "content/pricing-cards": {
+      "file": "src/components/content/PricingCards.tsx",
+      "tag": "section"
+    },
+    "content/resource-cards": {
+      "file": "src/components/content/ResourceCards.tsx",
+      "tag": "section"
+    },
+    "content/stats-bar": {
+      "file": "src/components/content/StatsBar.tsx",
+      "tag": "section"
+    },
+    "content/team-grid": {
+      "file": "src/components/content/TeamGrid.tsx",
+      "tag": "section"
+    },
+    "content/testimonials": {
+      "file": "src/components/content/Testimonials.tsx",
+      "tag": "section"
+    },
+    "content/why-section": {
+      "file": "src/components/content/WhySection.tsx",
+      "tag": "section"
+    },
+    "exit-intent": {
+      "file": "src/components/layout/ExitIntent.tsx",
+      "tag": "div"
+    },
+    "site-footer": {
+      "file": "src/components/layout/Footer.tsx",
+      "tag": "footer"
+    },
+    "fullbleed-hero": {
+      "file": "src/components/layout/FullbleedHero.tsx",
+      "tag": "nav"
+    },
+    "site-header": {
+      "file": "src/components/layout/Header.tsx",
+      "tag": "header"
+    },
+    "header-nav.client": {
+      "file": "src/components/layout/HeaderNav.client.tsx",
+      "tag": "li"
+    },
+    "help-badge": {
+      "file": "src/components/layout/HelpBadge.tsx",
+      "tag": "a"
+    },
+    "layout/page-hero": {
+      "file": "src/components/layout/PageHero.tsx",
+      "tag": "section"
+    },
+    "scroll-cue.client": {
+      "file": "src/components/layout/ScrollCue.client.tsx",
+      "tag": "div"
+    },
+    "layout/section-wrapper": {
+      "file": "src/components/layout/SectionWrapper.tsx",
+      "tag": "section"
+    },
+    "site-chrome.client": {
+      "file": "src/components/layout/SiteChrome.client.tsx",
+      "tag": "Header"
+    },
+    "tour-widget": {
+      "file": "src/components/layout/TourWidget.client.tsx",
+      "tag": "div"
+    },
+    "ui/badge": {
+      "file": "src/components/ui/Badge.tsx",
+      "tag": "span"
+    },
+    "ui/button": {
+      "file": "src/components/ui/Button.tsx",
+      "tag": "a"
+    },
+    "ui/motion-wrapper": {
+      "file": "src/components/ui/MotionWrapper.tsx",
+      "tag": "div"
+    }
+  },
+  "pages": {}
+}

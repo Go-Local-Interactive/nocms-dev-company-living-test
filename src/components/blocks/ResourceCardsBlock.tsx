@@ -144,7 +144,7 @@ export function ResourceCardsBlock({ title, body, mediaArray }: BlockProps) {
         )}
         {lead && (
           <div data-payload-subfield="body" className="max-w-[680px] mx-auto mt-4">
-            <p className="text-center font-body text-lg text-[var(--color-neutral-700)] leading-relaxed">
+            <p className="text-center font-body text-lg text-[var(--color-neutral-700)] leading-relaxed" data-role="subheading">
               {lead}
             </p>
           </div>
@@ -176,7 +176,7 @@ export function ResourceCardsBlock({ title, body, mediaArray }: BlockProps) {
                         src={src}
                         alt={alt}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
+                        loading="lazy" data-role="media"
                       />
                     ) : (
                       <div
@@ -193,13 +193,13 @@ export function ResourceCardsBlock({ title, body, mediaArray }: BlockProps) {
                   <span className="inline-block font-body text-base font-semibold uppercase tracking-[1.5px] text-[var(--color-overline)] mb-3">
                     {row.tag}
                   </span>
-                  <h3 className="font-heading text-[22px] font-bold text-[var(--color-neutral-900)] text-left mb-3 leading-snug">
+                  <h3 className="font-heading text-[22px] font-bold text-[var(--color-neutral-900)] text-left mb-3 leading-snug" data-role="heading-2">
                     {row.title}
                   </h3>
-                  <p className="font-body text-base text-[var(--color-neutral-700)] leading-relaxed mb-5">
+                  <p className="font-body text-base text-[var(--color-neutral-700)] leading-relaxed mb-5" data-role="subheading-2">
                     {row.description}
                   </p>
-                  <a href={row.href} className="btn btn-primary self-start">
+                  <a href={row.href} className="btn btn-primary self-start" data-role="cta">
                     {row.cta}
                   </a>
                 </div>

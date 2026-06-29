@@ -92,7 +92,7 @@ export function Testimonials({
             >
               <ChevronLeft className="h-5 w-5 text-text" />
             </button>
-            <span className="text-sm text-muted">
+            <span className="text-sm text-muted" data-role="text">
               {currentIndex + 1} / {testimonials.length}
             </span>
             <button
@@ -112,7 +112,7 @@ export function Testimonials({
     return (
       <section className="bg-surface py-16 lg:py-24 overflow-hidden" id="testimonials">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-text text-center">{heading}</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-text text-center" data-role="heading-2">{heading}</h2>
         </div>
         <div className="relative">
           <div
@@ -130,7 +130,7 @@ export function Testimonials({
                     <Star key={j} className="h-4 w-4 fill-accent text-accent" aria-hidden="true" />
                   ))}
                 </div>
-                <p className="text-text text-sm leading-relaxed italic mb-4">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-text text-sm leading-relaxed italic mb-4" data-role="subheading-2">&ldquo;{t.quote}&rdquo;</p>
                 <p className="font-semibold text-text text-sm">{t.author}</p>
                 {t.relationship && <p className="text-muted text-xs">{t.relationship}</p>}
               </div>
@@ -153,7 +153,7 @@ export function Testimonials({
   return (
     <section className="bg-surface py-16 lg:py-24" id="testimonials">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12">{heading}</h2>
+        <h2 className="font-heading text-3xl sm:text-4xl font-bold text-text text-center mb-12" data-role="heading-3">{heading}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {(testimonials ?? []).map((t, i) => (
             <div
@@ -166,7 +166,7 @@ export function Testimonials({
                 ))}
               </div>
               <Quote className="h-6 w-6 text-primary/15 mb-3" aria-hidden="true" />
-              <p className="text-text leading-relaxed italic mb-6">
+              <p className="text-text leading-relaxed italic mb-6" data-role="subheading-3">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3">

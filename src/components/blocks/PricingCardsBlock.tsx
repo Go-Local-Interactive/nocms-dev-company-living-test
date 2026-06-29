@@ -286,7 +286,7 @@ export function PricingCardsBlock({ title, body, settings }: BlockProps) {
                     {FEATURED_TAG}
                   </span>
                 )}
-                <h3 className="font-heading text-[1.75rem] font-bold text-[var(--color-neutral-900)] mb-5 leading-tight">
+                <h3 className="font-heading text-[1.75rem] font-bold text-[var(--color-neutral-900)] mb-5 leading-tight" data-role="heading-2">
                   {tier.name}
                 </h3>
                 <div
@@ -312,7 +312,7 @@ export function PricingCardsBlock({ title, body, settings }: BlockProps) {
                     </li>
                   ))}
                 </ul>
-                <a href={tier.href} className="btn btn-primary w-full">
+                <a href={tier.href} className="btn btn-primary w-full" data-role="cta">
                   {tier.cta}
                 </a>
               </div>
@@ -321,12 +321,12 @@ export function PricingCardsBlock({ title, body, settings }: BlockProps) {
         </div>
 
         {disclaimer && (
-          <p className="max-w-[680px] mx-auto mb-10 text-center font-body text-base italic text-[var(--color-neutral-500)] leading-relaxed">
+          <p className="max-w-[680px] mx-auto mb-10 text-center font-body text-base italic text-[var(--color-neutral-500)] leading-relaxed" data-role="subheading-2">
             {disclaimer}
           </p>
         )}
         <div className="text-center">
-          <a href={DEFAULT_CTA_HREF} className="btn btn-secondary">
+          <a href={DEFAULT_CTA_HREF} className="btn btn-secondary" data-role="cta-2">
             {DEFAULT_CTA}
           </a>
         </div>

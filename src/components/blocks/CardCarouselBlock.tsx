@@ -243,7 +243,7 @@ export function CardCarouselBlock({ title, items, settings }: BlockProps) {
                     src={card.image}
                     alt={card.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-role="media"
                   />
                 ) : (
                   <div
@@ -256,7 +256,7 @@ export function CardCarouselBlock({ title, items, settings }: BlockProps) {
               <div className="flex flex-1 flex-col p-6">
                 <h3
                   data-payload-subfield={`items.${i}.label`}
-                  className="mb-2 font-heading text-[20px] text-neutral-900"
+                  className="mb-2 font-heading text-[20px] text-neutral-900" data-role="heading-2"
                 >
                   {card.title}
                 </h3>
@@ -275,7 +275,7 @@ export function CardCarouselBlock({ title, items, settings }: BlockProps) {
                 {card.description && (
                   <p
                     data-payload-subfield={`items.${i}.text`}
-                    className="m-0 text-[16px] leading-[1.6] text-neutral-700"
+                    className="m-0 text-[16px] leading-[1.6] text-neutral-700" data-role="subheading"
                   >
                     {card.description}
                   </p>

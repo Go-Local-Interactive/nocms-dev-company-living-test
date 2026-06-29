@@ -90,7 +90,7 @@ export function BlogSidebar({
 
         {/* Search */}
         <div className="flex flex-col gap-3 [@media(max-width:1024px)]:flex-1 [@media(max-width:1024px)]:min-w-[200px] [@media(max-width:768px)]:min-w-full">
-          <span className="text-base font-semibold text-muted uppercase tracking-wide">
+          <span className="text-base font-semibold text-muted uppercase tracking-wide" data-role="text">
             Search
           </span>
           <div className="relative">
@@ -108,7 +108,7 @@ export function BlogSidebar({
 
         {/* Sort By */}
         <div className="flex flex-col gap-3 [@media(max-width:1024px)]:flex-1 [@media(max-width:1024px)]:min-w-[200px] [@media(max-width:768px)]:min-w-full">
-          <span className="text-base font-semibold text-muted uppercase tracking-wide">
+          <span className="text-base font-semibold text-muted uppercase tracking-wide" data-role="text-2">
             Sort By
           </span>
           <div className="relative">
@@ -134,14 +134,14 @@ export function BlogSidebar({
         </div>
 
         {/* No-JS fallback: apply search/sort without the auto-submit island. */}
-        <button type="submit" className="sr-only">
+        <button type="submit" className="sr-only" data-role="text-3">
           Apply filters
         </button>
       </BlogControls>
 
       {/* Browse by Category */}
       <div className="flex flex-col gap-3 [@media(max-width:1024px)]:basis-full [@media(max-width:1024px)]:flex-1 [@media(max-width:768px)]:min-w-full">
-        <span className="text-base font-bold text-primary mb-2 [@media(max-width:1024px)]:mb-0">
+        <span className="text-base font-bold text-primary mb-2 [@media(max-width:1024px)]:mb-0" data-role="text-4">
           Browse by Category
         </span>
         <nav

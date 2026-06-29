@@ -180,7 +180,7 @@ export function CareLevelGridBlock({ title, body, mediaArray, settings }: BlockP
                     src={photoSrc}
                     alt={mediaAlt(photo) || care.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    loading="lazy"
+                    loading="lazy" data-role="media"
                   />
                 ) : (
                   <div
@@ -202,18 +202,18 @@ export function CareLevelGridBlock({ title, body, mediaArray, settings }: BlockP
                   >
                     {care.tag}
                   </span>
-                  <h3 className="mb-3 font-heading text-[26px] font-bold leading-tight text-white">
+                  <h3 className="mb-3 font-heading text-[26px] font-bold leading-tight text-white" data-role="heading-2">
                     {care.title}
                   </h3>
-                  <p className="mb-5 font-body text-base leading-relaxed text-white/85">
+                  <p className="mb-5 font-body text-base leading-relaxed text-white/85" data-role="subheading-2">
                     {care.description}
                   </p>
                   <span
                     aria-hidden="true"
-                    className="inline-flex translate-y-3 items-center gap-2 rounded-[--radius] border-2 border-sand bg-sand px-6 py-2.5 font-body text-base font-semibold text-primary-dark opacity-0 transition-all duration-[350ms] ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 [@media(max-width:768px)]:translate-y-0 [@media(max-width:768px)]:opacity-100"
+                    className="inline-flex translate-y-3 items-center gap-2 rounded-[--radius] border-2 border-sand bg-sand px-6 py-2.5 font-body text-base font-semibold text-primary-dark opacity-0 transition-all duration-[350ms] ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 [@media(max-width:768px)]:translate-y-0 [@media(max-width:768px)]:opacity-100" data-role="text"
                   >
                     Learn more
-                    <span aria-hidden="true">&rarr;</span>
+                    <span aria-hidden="true" data-role="text-2">&rarr;</span>
                   </span>
                 </div>
                 {/* Bottom accent bar — grows center-out on hover/focus */}

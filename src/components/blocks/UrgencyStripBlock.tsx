@@ -73,7 +73,7 @@ export function UrgencyStripBlock({ title, body, items }: BlockProps) {
         <div className="flex items-center gap-4 flex-shrink-0 max-md:w-full max-md:flex-col max-md:items-start">
           <a
             href={telHref(phoneDisplay)}
-            className="inline-flex items-center justify-center gap-2 min-h-[44px] rounded-md bg-accent-dark px-6 py-3 font-body text-lg font-bold text-white transition-all duration-300 hover:bg-secondary-dark hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-dark focus-visible:ring-offset-2 max-md:w-full"
+            className="inline-flex items-center justify-center gap-2 min-h-[44px] rounded-md bg-accent-dark px-6 py-3 font-body text-lg font-bold text-white transition-all duration-300 hover:bg-secondary-dark hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-dark focus-visible:ring-offset-2 max-md:w-full" data-role="cta"
           >
             <Phone className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
             <span data-payload-subfield="contactPhone">{phoneDisplay}</span>

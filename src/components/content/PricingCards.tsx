@@ -107,7 +107,7 @@ export function PricingCards({
                   </Badge>
                 </div>
               )}
-              <h3 className="font-heading text-xl font-bold text-text mb-2">{plan.name}</h3>
+              <h3 className="font-heading text-xl font-bold text-text mb-2" data-role="heading-2">{plan.name}</h3>
               <p className="text-muted text-sm mb-4">{plan.description}</p>
               <div className="mb-6">
                 <span className="font-heading text-4xl font-bold text-primary">{plan.price}</span>
@@ -134,7 +134,7 @@ export function PricingCards({
           ))}
         </div>
 
-        <p className="text-center text-muted text-sm mt-10">
+        <p className="text-center text-muted text-sm mt-10" data-role="text">
           Prices shown are starting rates. Actual costs depend on apartment size and care needs. Contact us for a personalized quote.
         </p>
       </div>

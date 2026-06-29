@@ -110,11 +110,11 @@ interface SubProps {
 function CbText({ item, i }: SubProps) {
   const hasText = Boolean(item.text?.root?.children?.length);
   return (
-    <div className="text-[18px] leading-[1.8] text-neutral-700 [&_h2]:mb-4 [&_h2]:mt-0 [&_h2]:text-left [&_h2]:font-heading [&_h2]:text-[1.5rem] [&_h2]:font-bold [&_h2]:text-neutral-900 [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:text-left [&_h3]:font-heading [&_h3]:text-[1.2rem] [&_h3]:font-bold [&_h3]:text-neutral-900 [&_p]:mb-5 [&_p:last-child]:mb-0 [&_a]:text-primary [&_a]:underline hover:[&_a]:text-primary-dark [@media(max-width:480px)]:[&_h2]:text-[1.35rem]">
+    <div className="text-[18px] leading-[1.8] text-neutral-700 [&_h2]:mb-4 [&_h2]:mt-0 [&_h2]:text-left [&_h2]:font-heading [&_h2]:text-[1.5rem] [&_h2]:font-bold [&_h2]:text-neutral-900 [&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:text-left [&_h3]:font-heading [&_h3]:text-[1.2rem] [&_h3]:font-bold [&_h3]:text-neutral-900 [&_p]:mb-5 [&_p:last-child]:mb-0 [&_a]:text-primary [&_a]:underline hover:[&_a]:text-primary-dark [@media(max-width:480px)]:[&_h2]:text-[1.35rem]" data-nocms-component="content-blocks-block">
       {item.label && (
         <h2
           data-payload-subfield={`items.${i}.label`}
-          className="mb-4 mt-0 text-left font-heading text-[1.5rem] font-bold text-neutral-900 [@media(max-width:480px)]:text-[1.35rem]"
+          className="mb-4 mt-0 text-left font-heading text-[1.5rem] font-bold text-neutral-900 [@media(max-width:480px)]:text-[1.35rem]" data-role="heading-2"
         >
           {item.label}
         </h2>
@@ -136,7 +136,7 @@ function CbPhoto({ item, i, media }: SubProps) {
         data-payload-subfield={`items.${i}.media`}
         src={media.url}
         alt={media.alt || (item.label ?? "")}
-        loading="lazy"
+        loading="lazy" data-role="media"
       />
       {item.label && (
         <figcaption data-payload-subfield={`items.${i}.label`}>
@@ -173,14 +173,14 @@ function CbPhotoInline({ item, i, media }: SubProps) {
           src={media.url}
           alt={media.alt || (item.label ?? "")}
           loading="lazy"
-          className="block h-auto w-full rounded-[var(--radius)]"
+          className="block h-auto w-full rounded-[var(--radius)]" data-role="media-2"
         />
       )}
       <div className="text-[18px] leading-[1.8] text-neutral-700 [&_p]:mb-4 [&_p:last-child]:mb-0 [&_a]:text-primary [&_a]:underline [@media(max-width:768px)]:text-[16px]">
         {item.label && (
           <h3
             data-payload-subfield={`items.${i}.label`}
-            className="mb-3 mt-0 font-heading text-[1.2rem] font-bold text-neutral-900"
+            className="mb-3 mt-0 font-heading text-[1.2rem] font-bold text-neutral-900" data-role="heading-3"
           >
             {item.label}
           </h3>
@@ -218,7 +218,7 @@ function CbList({ item, i }: SubProps) {
       {item.label && (
         <h3
           data-payload-subfield={`items.${i}.label`}
-          className="mb-4 mt-0 font-heading text-[1.2rem] font-bold text-neutral-900"
+          className="mb-4 mt-0 font-heading text-[1.2rem] font-bold text-neutral-900" data-role="heading-4"
         >
           {item.label}
         </h3>
@@ -267,7 +267,7 @@ function CbBadges({ item, i, media }: SubProps) {
                   src={logo.url}
                   alt={logo.alt || name || ""}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-full max-w-full object-contain" data-role="media-3"
                 />
               </span>
             ) : (
@@ -313,7 +313,7 @@ function CbCallout({ item, i }: SubProps) {
         {item.label && (
           <h3
             data-payload-subfield={`items.${i}.label`}
-            className="mb-2.5 mt-0 font-heading text-[1.25rem] font-bold text-white"
+            className="mb-2.5 mt-0 font-heading text-[1.25rem] font-bold text-white" data-role="heading-5"
           >
             {item.label}
           </h3>
@@ -321,7 +321,7 @@ function CbCallout({ item, i }: SubProps) {
         {text && (
           <p
             data-payload-subfield={`items.${i}.text`}
-            className="mx-auto mb-5 max-w-[480px] text-[16px] text-sand"
+            className="mx-auto mb-5 max-w-[480px] text-[16px] text-sand" data-role="subheading"
           >
             {text}
           </p>
@@ -330,7 +330,7 @@ function CbCallout({ item, i }: SubProps) {
           <a
             data-payload-subfield={`items.${i}.link.label`}
             href={cta.url || "#"}
-            className="btn btn-secondary"
+            className="btn btn-secondary" data-role="cta"
           >
             {cta.label}
           </a>

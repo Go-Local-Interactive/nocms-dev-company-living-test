@@ -114,7 +114,7 @@ export function CalloutBandBlock({ title, body, settings }: BlockProps) {
           >
             {copy}
           </p>
-          <a href={defaults.href} className="btn btn-cream">
+          <a href={defaults.href} className="btn btn-cream" data-role="cta">
             {defaults.cta}
           </a>
         </div>
@@ -184,7 +184,7 @@ export function CalloutBandBlock({ title, body, settings }: BlockProps) {
             <span data-payload-subfield="contactPhone">{phoneDisplay}</span>
           </a>
           <div>
-            <a href={defaults.href} className="btn btn-secondary">
+            <a href={defaults.href} className="btn btn-secondary" data-role="cta-2">
               {defaults.cta}
             </a>
           </div>

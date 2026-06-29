@@ -76,13 +76,13 @@ export function CareCards({
               <Badge variant="primary" className="mb-3 bg-primary-light/30 text-white backdrop-blur-sm">
                 {care.tag}
               </Badge>
-              <h3 className="font-heading text-2xl font-bold text-white mb-2">
+              <h3 className="font-heading text-2xl font-bold text-white mb-2" data-role="heading-2">
                 {care.title}
               </h3>
               <p className="text-white/85 text-sm leading-relaxed mb-4" data-role="subheading">
                 {care.description}
               </p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:gap-3 transition-all">
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:gap-3 transition-all" data-role="text">
                 Learn More <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </span>
             </div>

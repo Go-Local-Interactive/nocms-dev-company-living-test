@@ -194,7 +194,7 @@ export function HeaderNav() {
         {mainNav.map((group, index) => {
           const isOpen = open?.kind === "dropdown" && open.index === index;
           return (
-            <li key={group.label} className="relative shrink-0 whitespace-nowrap">
+            <li key={group.label} className="relative shrink-0 whitespace-nowrap" data-nocms-component="header-nav.client">
               <button
                 type="button"
                 aria-expanded={isOpen}
@@ -308,7 +308,7 @@ export function HeaderNav() {
               className="relative flex items-center"
               onSubmit={(e) => e.preventDefault()}
             >
-              <label htmlFor="header-search-input" className="sr-only">
+              <label htmlFor="header-search-input" className="sr-only" data-role="text">
                 Search
               </label>
               <Search
@@ -341,7 +341,7 @@ export function HeaderNav() {
             </form>
 
             <div className="mt-5 border-t border-text/10 pt-4" aria-label="Popular searches">
-              <p className="mb-2 text-base font-bold uppercase tracking-wide text-text/85">
+              <p className="mb-2 text-base font-bold uppercase tracking-wide text-text/85" data-role="subheading">
                 Popular searches
               </p>
               <ul className="m-0 list-none p-0">
@@ -427,7 +427,7 @@ export function HeaderNav() {
         >
           {/* Sticky header — "Menu" + close */}
           <div className="sticky top-0 z-[2] flex items-center justify-between border-b border-text/10 bg-white px-5 py-4">
-            <span className="font-heading text-lg font-bold text-text">Menu</span>
+            <span className="font-heading text-lg font-bold text-text" data-role="text-2">Menu</span>
             <button
               type="button"
               aria-label="Close menu"
@@ -518,7 +518,7 @@ export function HeaderNav() {
               href="/schedule-tour"
               data-tour-trigger
               onClick={closeDrawer}
-              className="block rounded-md bg-secondary px-4 py-3.5 text-center text-lg font-bold text-white transition-colors hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+              className="block rounded-md bg-secondary px-4 py-3.5 text-center text-lg font-bold text-white transition-colors hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary" data-role="cta"
             >
               Schedule a Tour
             </a>

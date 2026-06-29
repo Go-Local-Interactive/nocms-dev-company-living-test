@@ -55,8 +55,8 @@ export default async function BlogPostPage({ params }: Props) {
   if (slug === "_placeholder") {
     return (
       <div className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="font-heading text-3xl font-bold text-text">Blog</h1>
-        <p className="mt-4 text-muted">No posts yet.</p>
+        <h1 className="font-heading text-3xl font-bold text-text" data-role="heading-2">Blog</h1>
+        <p className="mt-4 text-muted" data-role="text">No posts yet.</p>
       </div>
     );
   }
@@ -110,14 +110,14 @@ export default async function BlogPostPage({ params }: Props) {
                 </Link>
               </li>
               <li className="flex items-center">
-                <span aria-hidden="true" className="mx-2 font-normal text-white/65">/</span>
+                <span aria-hidden="true" className="mx-2 font-normal text-white/65" data-role="text-2">/</span>
                 <Link href="/blog" className="text-white no-underline transition-colors hover:text-sand">
                   Resources
                 </Link>
               </li>
               {category && (
                 <li className="flex items-center">
-                  <span aria-hidden="true" className="mx-2 font-normal text-white/65">/</span>
+                  <span aria-hidden="true" className="mx-2 font-normal text-white/65" data-role="text-3">/</span>
                   <span aria-current="page" className="font-semibold text-white">{category}</span>
                 </li>
               )}
@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: Props) {
                       src={authorPhoto}
                       alt={mediaAlt(author.photo) || author.name}
                       loading="lazy"
-                      className="h-11 w-11 rounded-full border-2 border-white/30 object-cover"
+                      className="h-11 w-11 rounded-full border-2 border-white/30 object-cover" data-role="media-2"
                     />
                   )}
                   <span className="text-base font-semibold text-white">{author.name}</span>
@@ -208,13 +208,13 @@ export default async function BlogPostPage({ params }: Props) {
                       src={authorPhoto}
                       alt={mediaAlt(author.photo) || author.name}
                       loading="lazy"
-                      className="h-20 w-20 shrink-0 rounded-full border-[3px] border-primary-light object-cover"
+                      className="h-20 w-20 shrink-0 rounded-full border-[3px] border-primary-light object-cover" data-role="media-3"
                     />
                   )}
                   <div className="flex flex-col gap-2">
                     <span className="font-heading text-xl font-bold text-neutral-900">{author.name}</span>
                     {author.role && <span className="text-base font-semibold text-primary">{author.role}</span>}
-                    {author.bio && <p className="text-base leading-relaxed text-muted">{author.bio}</p>}
+                    {author.bio && <p className="text-base leading-relaxed text-muted" data-role="subheading">{author.bio}</p>}
                   </div>
                 </div>
               )}
@@ -227,8 +227,8 @@ export default async function BlogPostPage({ params }: Props) {
                   style={{ backgroundImage: "url('/golden-oaks/leaf-sprigs-white.png')" }}
                 />
                 <div className="relative z-[1]">
-                  <h2 className="mb-3 text-center font-heading text-2xl font-bold text-white">Stay Informed</h2>
-                  <p className="mb-6 text-base leading-relaxed text-sand">
+                  <h2 className="mb-3 text-center font-heading text-2xl font-bold text-white" data-role="heading-3">Stay Informed</h2>
+                  <p className="mb-6 text-base leading-relaxed text-sand" data-role="subheading-2">
                     Get helpful articles, guides, and community updates from{" "}
                     {skinConfig.brandName} delivered to your inbox.
                   </p>
@@ -247,7 +247,7 @@ export default async function BlogPostPage({ params }: Props) {
                     />
                     <button
                       type="submit"
-                      className="min-h-11 whitespace-nowrap rounded-[var(--radius)] border-2 border-secondary bg-secondary px-7 py-3.5 text-base font-semibold text-white transition-[background,border-color] hover:border-secondary-dark hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      className="min-h-11 whitespace-nowrap rounded-[var(--radius)] border-2 border-secondary bg-secondary px-7 py-3.5 text-base font-semibold text-white transition-[background,border-color] hover:border-secondary-dark hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-role="cta"
                     >
                       Subscribe
                     </button>
@@ -263,7 +263,7 @@ export default async function BlogPostPage({ params }: Props) {
       {related.length > 0 && (
         <section className="bg-section-sage py-16">
           <div className="mx-auto max-w-[1200px] px-10 [@media(max-width:480px)]:px-5">
-            <h2 className="mb-6 text-left font-heading text-2xl font-bold text-neutral-900">
+            <h2 className="mb-6 text-left font-heading text-2xl font-bold text-neutral-900" data-role="heading-4">
               You Might Also Like
             </h2>
             <div className="grid grid-cols-3 gap-7 [@media(max-width:1024px)]:grid-cols-2 [@media(max-width:768px)]:grid-cols-1 [@media(max-width:768px)]:gap-6">

@@ -73,7 +73,7 @@ export function TeamGrid({
                   </div>
                 )}
               </div>
-              <h3 className="font-heading text-lg font-bold text-text">{member.name}</h3>
+              <h3 className="font-heading text-lg font-bold text-text" data-role="heading-2">{member.name}</h3>
               <p className="text-primary text-sm font-medium mb-2">{member.title}</p>
               {member.bio && (
                 <p className="text-muted text-sm leading-relaxed max-w-xs mx-auto" data-role="subheading">

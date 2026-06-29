@@ -66,14 +66,14 @@ export function ContactForm({
 
   return (
     <div>
-      {heading && <h2 className="font-heading text-3xl font-bold text-text mb-3">{heading}</h2>}
-      {description && <p className="text-muted mb-8 max-w-lg">{description}</p>}
+      {heading && <h2 className="font-heading text-3xl font-bold text-text mb-3" data-role="heading-2">{heading}</h2>}
+      {description && <p className="text-muted mb-8 max-w-lg" data-role="subheading-2">{description}</p>}
       <form onSubmit={handleSubmit} className="space-y-5">
         {(fields ?? []).map((field) => (
           <div key={field.name}>
             <label htmlFor={field.name} className="block text-sm font-medium text-text mb-1.5">
               {field.label}
-              {field.required && <span className="text-secondary ml-1" aria-hidden="true">*</span>}
+              {field.required && <span className="text-secondary ml-1" aria-hidden="true" data-role="text">*</span>}
             </label>
             {field.type === "textarea" ? (
               <textarea

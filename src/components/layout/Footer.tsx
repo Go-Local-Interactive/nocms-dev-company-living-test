@@ -88,7 +88,7 @@ export function Footer({ variant = "full" }: FooterProps) {
           )}
           <a
             href="/"
-            className="text-white underline underline-offset-[3px] transition-colors hover:text-primary-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light"
+            className="text-white underline underline-offset-[3px] transition-colors hover:text-primary-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light" data-role="text"
           >
             Back to Homepage
           </a>
@@ -121,7 +121,7 @@ export function Footer({ variant = "full" }: FooterProps) {
                 <img
                   src={logoSrc}
                   alt={logoAlt}
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain" data-role="media"
                 />
               ) : (
                 <span className="font-heading text-2xl font-bold text-white">
@@ -131,7 +131,7 @@ export function Footer({ variant = "full" }: FooterProps) {
             </a>
             <p
               className="max-w-[45ch] text-base leading-relaxed text-white/75"
-              data-payload-subfield="tagline"
+              data-payload-subfield="tagline" data-role="subheading"
             >
               {tagline}. We&apos;re here to support you and your family through
               every step of the senior living journey.
@@ -171,7 +171,7 @@ export function Footer({ variant = "full" }: FooterProps) {
             const isLast = index === footerColumns.length - 1;
             return (
               <div key={column.heading}>
-                <h3 className="mb-5 font-heading text-base font-bold text-white">
+                <h3 className="mb-5 font-heading text-base font-bold text-white" data-role="heading">
                   {column.heading}
                 </h3>
                 <ul className="list-none">
@@ -190,14 +190,14 @@ export function Footer({ variant = "full" }: FooterProps) {
                 {/* Newsletter signup lives in the final column (mockup) */}
                 {isLast && (
                   <>
-                    <h3 className="mb-5 mt-6 font-heading text-base font-bold text-white">
+                    <h3 className="mb-5 mt-6 font-heading text-base font-bold text-white" data-role="heading-2">
                       Stay Connected
                     </h3>
                     <form
                       className="flex flex-col gap-3"
                       aria-label="Newsletter signup"
                     >
-                      <label htmlFor="newsletter-email" className="sr-only">
+                      <label htmlFor="newsletter-email" className="sr-only" data-role="text-2">
                         Email address
                       </label>
                       <input
@@ -210,7 +210,7 @@ export function Footer({ variant = "full" }: FooterProps) {
                       />
                       <button
                         type="submit"
-                        className="cursor-pointer rounded-md bg-primary px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light"
+                        className="cursor-pointer rounded-md bg-primary px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light" data-role="cta"
                       >
                         Subscribe
                       </button>

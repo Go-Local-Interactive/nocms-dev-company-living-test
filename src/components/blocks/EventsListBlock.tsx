@@ -168,7 +168,7 @@ export function EventsListBlock({ title, body }: BlockProps) {
                 )}
               </div>
               <div className="min-w-0">
-                <h3 className="font-heading text-xl sm:text-2xl font-semibold text-text leading-tight group-hover:text-primary transition-colors">
+                <h3 className="font-heading text-xl sm:text-2xl font-semibold text-text leading-tight group-hover:text-primary transition-colors" data-role="heading-2">
                   {evt.title}
                 </h3>
                 {evt.time && (
@@ -177,7 +177,7 @@ export function EventsListBlock({ title, body }: BlockProps) {
                   </p>
                 )}
                 {evt.description && (
-                  <p className="mt-2 font-body text-base text-muted leading-relaxed">
+                  <p className="mt-2 font-body text-base text-muted leading-relaxed" data-role="subheading-2">
                     {evt.description}
                   </p>
                 )}

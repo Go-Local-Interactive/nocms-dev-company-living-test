@@ -401,7 +401,7 @@ export function SearchResultsBlock({
             <button
               type="submit"
               aria-label="Search"
-              className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-[calc(var(--radius)-4px)] border-0 bg-primary transition-colors hover:bg-primary-dark"
+              className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-[calc(var(--radius)-4px)] border-0 bg-primary transition-colors hover:bg-primary-dark" data-role="cta"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -504,10 +504,10 @@ export function SearchResultsBlock({
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
             </div>
-            <h2 className="mb-3 font-heading text-2xl text-neutral-900">
+            <h2 className="mb-3 font-heading text-2xl text-neutral-900" data-role="heading-2">
               We couldn&apos;t find a match
             </h2>
-            <p className="mx-auto mb-9 max-w-[500px] font-body text-lg leading-[1.6] text-neutral-500">
+            <p className="mx-auto mb-9 max-w-[500px] font-body text-lg leading-[1.6] text-neutral-500" data-role="subheading-2">
               Try different keywords, check your spelling, or browse one of these
               popular pages:
             </p>
@@ -534,7 +534,7 @@ export function SearchResultsBlock({
                 </a>
               ))}
             </div>
-            <p className="font-body text-lg text-neutral-700">
+            <p className="font-body text-lg text-neutral-700" data-role="subheading-3">
               Or give us a call — we&apos;re happy to help.
               {skinConfig.contactPhone && (
                 <>
@@ -567,7 +567,7 @@ export function SearchResultsBlock({
                         src={r.thumb}
                         alt={r.thumbAlt || ""}
                         loading="lazy"
-                        className="block h-full w-full object-cover"
+                        className="block h-full w-full object-cover" data-role="media"
                       />
                     </div>
                   )}
@@ -582,7 +582,7 @@ export function SearchResultsBlock({
                         {r.title}
                       </a>
                     </div>
-                    <p className="line-clamp-2 font-body text-base leading-[1.6] text-neutral-700">
+                    <p className="line-clamp-2 font-body text-base leading-[1.6] text-neutral-700" data-role="subheading-4">
                       {r.excerpt}
                     </p>
                     <span className="mt-1 block font-body text-base text-primary">
@@ -599,7 +599,7 @@ export function SearchResultsBlock({
                 <button
                   type="button"
                   onClick={() => setAllLoaded(true)}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--radius)] border-2 border-transparent bg-primary-light px-8 py-3 font-body text-lg font-semibold text-primary-dark transition-colors hover:bg-primary hover:text-white"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[var(--radius)] border-2 border-transparent bg-primary-light px-8 py-3 font-body text-lg font-semibold text-primary-dark transition-colors hover:bg-primary hover:text-white" data-role="cta-2"
                 >
                   Show More Results ({remaining} remaining)
                 </button>

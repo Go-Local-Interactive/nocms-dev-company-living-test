@@ -224,7 +224,7 @@ export function TabbedAccordion({
             {visible.map((group, gi) => (
               <div key={`${group.category}-${gi}`} className="mb-10 last:mb-0">
                 {showHeadings && group.category && (
-                  <h3 className="mb-5 border-b-2 border-primary-light pb-3 text-left font-heading text-2xl text-primary-dark [@media(max-width:768px)]:text-xl">
+                  <h3 className="mb-5 border-b-2 border-primary-light pb-3 text-left font-heading text-2xl text-primary-dark [@media(max-width:768px)]:text-xl" data-role="heading-2">
                     {group.category}
                   </h3>
                 )}
@@ -250,7 +250,7 @@ export function TabbedAccordion({
                           <polyline points="6 9 12 15 18 9" />
                         </svg>
                       </summary>
-                      <p className="px-6 pb-6 font-body text-base leading-[1.7] text-neutral-700 [@media(max-width:768px)]:px-5 [@media(max-width:768px)]:pb-5">
+                      <p className="px-6 pb-6 font-body text-base leading-[1.7] text-neutral-700 [@media(max-width:768px)]:px-5 [@media(max-width:768px)]:pb-5" data-role="subheading-2">
                         {item.a}
                       </p>
                     </details>
@@ -274,10 +274,10 @@ export function TabbedAccordion({
               <circle cx="24" cy="24" r="20" />
               <line x1="16" y1="24" x2="32" y2="24" />
             </svg>
-            <p className="mb-2 text-lg text-neutral-700">
+            <p className="mb-2 text-lg text-neutral-700" data-role="subheading-3">
               No matching questions found.
             </p>
-            <small className="text-base text-neutral-500">
+            <small className="text-base text-neutral-500" data-role="text">
               Try a different search term or browse by category.
             </small>
           </div>

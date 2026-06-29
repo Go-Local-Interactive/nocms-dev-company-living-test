@@ -162,10 +162,10 @@ export function ExitIntent() {
               strokeWidth={2}
               aria-hidden="true"
             />
-            <h4 className="mb-2 font-heading text-[22px] font-bold text-text">
+            <h4 className="mb-2 font-heading text-[22px] font-bold text-text" data-role="heading">
               Check Your Inbox!
             </h4>
-            <p className="text-base text-muted">
+            <p className="text-base text-muted" data-role="subheading">
               Your free checklist is on its way. We&apos;re here if you need
               anything else.
             </p>
@@ -182,11 +182,11 @@ export function ExitIntent() {
             </div>
             <h4
               data-payload-subfield="heading"
-              className="mb-2 text-center font-heading text-2xl font-bold text-text"
+              className="mb-2 text-center font-heading text-2xl font-bold text-text" data-role="heading-2"
             >
               Get Your Free Senior Living Checklist
             </h4>
-            <p className="mb-6 text-center text-base leading-relaxed text-muted">
+            <p className="mb-6 text-center text-base leading-relaxed text-muted" data-role="subheading-2">
               Not sure where to start? We put together a step-by-step guide to
               help families navigate the transition with confidence.
             </p>
@@ -215,7 +215,7 @@ export function ExitIntent() {
               noValidate
               className="mb-4 flex flex-col gap-2.5 min-[481px]:flex-row"
             >
-              <label htmlFor="exit-intent-email" className="sr-only">
+              <label htmlFor="exit-intent-email" className="sr-only" data-role="text">
                 Email address
               </label>
               <input
@@ -238,7 +238,7 @@ export function ExitIntent() {
               />
               <button
                 type="submit"
-                className="cursor-pointer whitespace-nowrap rounded-md bg-secondary px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary [@media(max-width:480px)]:w-full"
+                className="cursor-pointer whitespace-nowrap rounded-md bg-secondary px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary [@media(max-width:480px)]:w-full" data-role="cta"
               >
                 Send It
               </button>
@@ -256,7 +256,7 @@ export function ExitIntent() {
 
             <p
               data-payload-subfield="privacy"
-              className="m-0 text-center text-base leading-snug text-muted"
+              className="m-0 text-center text-base leading-snug text-muted" data-role="subheading-3"
             >
               No spam, ever. Unsubscribe anytime.
             </p>
@@ -264,7 +264,7 @@ export function ExitIntent() {
             {contactPhone && (
               <a
                 href={telHref(contactPhone)}
-                className="mt-4 flex items-center justify-center gap-2 border-t border-neutral-300 pt-4 text-base font-semibold text-primary transition-colors hover:text-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="mt-4 flex items-center justify-center gap-2 border-t border-neutral-300 pt-4 text-base font-semibold text-primary transition-colors hover:text-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" data-role="text-2"
               >
                 <Phone className="h-[18px] w-[18px]" aria-hidden="true" />
                 Or call us: {contactPhone}

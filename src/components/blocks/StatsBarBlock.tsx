@@ -242,7 +242,7 @@ export function StatsBarBlock({ title, body }: BlockProps) {
                   {stat.label}
                 </dd>
                 {stat.description && (
-                  <p className="font-body text-base leading-relaxed text-[color-mix(in_srgb,var(--color-white)_85%,transparent)]">
+                  <p className="font-body text-base leading-relaxed text-[color-mix(in_srgb,var(--color-white)_85%,transparent)]" data-role="subheading">
                     {stat.description}
                   </p>
                 )}
@@ -253,7 +253,7 @@ export function StatsBarBlock({ title, body }: BlockProps) {
 
         {teamCallout && (
           <div className="mt-12 border-t border-[color-mix(in_srgb,var(--color-white)_10%,transparent)] pt-10 text-center">
-            <p className="mx-auto mb-6 max-w-[600px] font-body text-lg leading-relaxed text-[color-mix(in_srgb,var(--color-white)_85%,transparent)]">
+            <p className="mx-auto mb-6 max-w-[600px] font-body text-lg leading-relaxed text-[color-mix(in_srgb,var(--color-white)_85%,transparent)]" data-role="subheading-2">
               {teamCallout}
             </p>
             <a
@@ -263,7 +263,7 @@ export function StatsBarBlock({ title, body }: BlockProps) {
               {TEAM_CTA}
               <span
                 aria-hidden="true"
-                className="transition-transform duration-300 group-hover/team:translate-x-1"
+                className="transition-transform duration-300 group-hover/team:translate-x-1" data-role="text"
               >
                 &rarr;
               </span>

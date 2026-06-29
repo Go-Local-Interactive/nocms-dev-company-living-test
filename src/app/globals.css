@@ -8,12 +8,13 @@
    mirroring the Golden Oaks mockup; the --font-* tokens below resolve to them. */
 
 @theme {
+  --color-steel-light: #f5faeb;
   /* ─── Brand primitives — EXACT Golden Oaks palette (brand-clone-config.json).
      Re-skinned per project by the NoCMS design-brief overlay at scaffold time;
      change ONLY these bases and the derived shades below follow. ─── */
-  --color-primary: #4D654C;
-  --color-secondary: #AD6045;
-  --color-accent: #C4882B;
+  --color-primary: #2c3e50;
+  --color-secondary: #6b8e23;
+  --color-accent: #8fbc8f;
   --color-cool: #7383A0;
   --color-text: #2C2218;
   --color-warm: #E8DCC8;
@@ -23,11 +24,11 @@
 
   /* ─── Derived shades — re-derived from the new bases (mockup color-mix ratios).
      primary-dark = 70% primary + black; primary-light = 21% primary + white; etc. ─── */
-  --color-primary-dark: #364735;
-  --color-primary-light: #DADFD9;
-  --color-secondary-dark: #8A4D37;
-  --color-secondary-light: #EDDCD6;
-  --color-accent-light: #F1E2CC;
+  --color-primary-dark: #1a2633;
+  --color-primary-light: #e8ecf0;
+  --color-secondary-dark: #4a5f17;
+  --color-secondary-light: #e8ecd8;
+  --color-accent-light: #f0f5f0;
   --color-accent-dark: #936620;       /* mockup --accent-dark (75% accent + black) */
   --color-sand: #E8DCC8;
   --color-linen: #F7F2EB;
@@ -75,7 +76,7 @@
   --color-success: #2E7D32;           /* mockup --success */
   --color-success-light: #EEF5EF;     /* mockup --success-light (8% success + white) */
 
-  --font-heading: "Libre Baskerville", ui-serif, Georgia, serif;
+  --font-heading: "Libre Baskerville", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Open Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -684,4 +685,30 @@
     z-index: 0;
     pointer-events: none;
   }
+}
+
+/* Bare-token aliases for designPattern references (parity with the
+   generated globals.css). */
+:root {
+  --primary: var(--color-primary);
+  --secondary: var(--color-secondary);
+  --accent: var(--color-accent);
+  --cool: var(--color-cool);
+  --warm: var(--color-warm);
+  --background: var(--color-background);
+  --surface: var(--color-surface);
+  --text: var(--color-text);
+  --muted: var(--color-muted);
+  --primary-dark: var(--color-primary-dark);
+  --primary-light: var(--color-primary-light);
+  --secondary-dark: var(--color-secondary-dark);
+  --secondary-light: var(--color-secondary-light);
+  --accent-light: var(--color-accent-light);
+  --sand: var(--color-sand);
+  --linen: var(--color-linen);
+  --warm-brown: var(--color-warm-brown);
+  --rich-brown: var(--color-rich-brown);
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-500: #6b7280;
 }

@@ -319,7 +319,7 @@ function StatIcon({ slug, className = "h-5 w-5" }: { slug: string; className?: s
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      className={className}
+      className={className} data-nocms-component="hero-block"
     >
       {STAT_ICONS[slug] ?? STAT_ICONS.default}
     </svg>
@@ -402,14 +402,14 @@ function VideoHero({ title, body, media, items, settings }: BlockProps) {
           <a
             href={primary.href}
             data-payload-subfield="primaryCta"
-            className="btn btn-secondary w-full min-w-[240px] min-[481px]:w-auto"
+            className="btn btn-secondary w-full min-w-[240px] min-[481px]:w-auto" data-role="cta"
           >
             {primary.label}
           </a>
           <a
             href={secondary.href}
             data-payload-subfield="secondaryCta"
-            className="btn btn-outline w-full min-w-[240px] min-[481px]:w-auto"
+            className="btn btn-outline w-full min-w-[240px] min-[481px]:w-auto" data-role="cta-2"
           >
             {secondary.label}
           </a>
@@ -428,7 +428,7 @@ function HeroSearchForm() {
       method="get"
       className="mx-auto mb-12 flex max-w-xl flex-col items-stretch gap-3 rounded-lg bg-white/95 p-2 shadow-lg sm:flex-row"
     >
-      <label htmlFor="hero-search" className="sr-only">
+      <label htmlFor="hero-search" className="sr-only" data-role="text">
         City or ZIP code
       </label>
       <input
@@ -438,7 +438,7 @@ function HeroSearchForm() {
         placeholder="City or ZIP code"
         className="flex-1 rounded-md border-0 bg-transparent px-4 py-3 text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary/30"
       />
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary" data-role="cta-3">
         Find Community
       </button>
     </form>

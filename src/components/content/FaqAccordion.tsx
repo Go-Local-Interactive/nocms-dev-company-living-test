@@ -76,7 +76,7 @@ export function FaqAccordion({
                 activeCategory === null
                   ? "bg-primary text-white"
                   : "bg-surface text-muted hover:text-text"
-              }`}
+              }`} data-role="text"
             >
               All
             </button>

@@ -237,7 +237,7 @@ export function AmenityGridBlock({ title, body, mediaArray, settings }: BlockPro
                     src={wellSrc}
                     alt={mediaAlt(photo) || a.name}
                     className="w-full aspect-[4/3] object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                    loading="lazy"
+                    loading="lazy" data-role="media"
                   />
                 ) : null}
                 <div className="p-7 text-center">
@@ -249,7 +249,7 @@ export function AmenityGridBlock({ title, body, mediaArray, settings }: BlockPro
                         src={photoSrc}
                         alt={mediaAlt(photo) || a.name}
                         className="mx-auto mb-5 h-16 w-16 rounded-full object-cover"
-                        loading="lazy"
+                        loading="lazy" data-role="media-2"
                       />
                     ) : (
                       <div
@@ -259,7 +259,7 @@ export function AmenityGridBlock({ title, body, mediaArray, settings }: BlockPro
                         <span className="h-8 w-8 block">{a.icon}</span>
                       </div>
                     ))}
-                  <h3 className={`font-heading text-xl font-semibold mb-2 ${headingCls}`}>
+                  <h3 className={`font-heading text-xl font-semibold mb-2 ${headingCls}`} data-role="heading-2">
                     {a.name}
                   </h3>
                   <p className={`font-body text-sm leading-relaxed ${bodyCls}`}>

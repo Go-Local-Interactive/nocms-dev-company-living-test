@@ -46,7 +46,7 @@ const INPUT_CLASS =
 
 export function TourFormBlock(props: BlockProps) {
   const variant = props.settings?.variant ?? "stacked";
-  if (variant === "split") return <SplitFormBlock {...props} />;
+  if (variant === "split") return <SplitFormBlock {...props} data-nocms-component="tour-form-block" />;
   return <StackedTourForm {...props} />;
 }
 
@@ -111,7 +111,7 @@ function StackedTourForm({ title, body }: BlockProps) {
             <div>
               <label
                 htmlFor="tour-name"
-                className="mb-1.5 block font-body text-base font-semibold text-text"
+                className="mb-1.5 block font-body text-base font-semibold text-text" data-role="text"
               >
                 Your Name
               </label>
@@ -129,7 +129,7 @@ function StackedTourForm({ title, body }: BlockProps) {
               <div>
                 <label
                   htmlFor="tour-email"
-                  className="mb-1.5 block font-body text-base font-semibold text-text"
+                  className="mb-1.5 block font-body text-base font-semibold text-text" data-role="text-2"
                 >
                   Email
                 </label>
@@ -145,7 +145,7 @@ function StackedTourForm({ title, body }: BlockProps) {
               <div>
                 <label
                   htmlFor="tour-phone"
-                  className="mb-1.5 block font-body text-base font-semibold text-text"
+                  className="mb-1.5 block font-body text-base font-semibold text-text" data-role="text-3"
                 >
                   Phone
                 </label>
@@ -163,7 +163,7 @@ function StackedTourForm({ title, body }: BlockProps) {
               <div>
                 <label
                   htmlFor="tour-date"
-                  className="mb-1.5 block font-body text-base font-semibold text-text"
+                  className="mb-1.5 block font-body text-base font-semibold text-text" data-role="text-4"
                 >
                   Preferred Date
                 </label>
@@ -177,7 +177,7 @@ function StackedTourForm({ title, body }: BlockProps) {
               <div>
                 <label
                   htmlFor="tour-community"
-                  className="mb-1.5 block font-body text-base font-semibold text-text"
+                  className="mb-1.5 block font-body text-base font-semibold text-text" data-role="text-5"
                 >
                   Community of Interest
                 </label>
@@ -196,10 +196,10 @@ function StackedTourForm({ title, body }: BlockProps) {
             <div>
               <label
                 htmlFor="tour-message"
-                className="mb-1.5 block font-body text-base font-semibold text-text"
+                className="mb-1.5 block font-body text-base font-semibold text-text" data-role="text-6"
               >
                 Anything we should know?{" "}
-                <span className="font-normal text-muted">(optional)</span>
+                <span className="font-normal text-muted" data-role="text-7">(optional)</span>
               </label>
               <textarea
                 id="tour-message"
@@ -212,12 +212,12 @@ function StackedTourForm({ title, body }: BlockProps) {
 
             <button
               type="submit"
-              className="btn btn-secondary w-full px-6 py-4 font-heading text-base"
+              className="btn btn-secondary w-full px-6 py-4 font-heading text-base" data-role="cta"
             >
               Schedule a Tour
             </button>
 
-            <p className="text-center font-body text-base leading-relaxed text-muted">
+            <p className="text-center font-body text-base leading-relaxed text-muted" data-role="subheading-2">
               No commitment — just a friendly visit. We&apos;ll confirm your
               time within one business day.
             </p>

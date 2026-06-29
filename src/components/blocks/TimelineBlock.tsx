@@ -244,7 +244,7 @@ export function TimelineBlock({ title, body }: BlockProps) {
                         : "min-[1025px]:order-3 min-[1025px]:text-left")
                     }
                   >
-                    <h3 className="mb-1.5 font-heading text-[1.25rem] text-neutral-900">
+                    <h3 className="mb-1.5 font-heading text-[1.25rem] text-neutral-900" data-role="heading-2">
                       {item.title}
                     </h3>
                     <p className="m-0 font-body text-neutral-700">{item.description}</p>

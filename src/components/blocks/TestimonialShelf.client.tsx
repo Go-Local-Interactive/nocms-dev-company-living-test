@@ -51,7 +51,7 @@ export function TestimonialShelfTrack({ children }: { children: React.ReactNode 
   }, []);
 
   return (
-    <div ref={trackRef} className="go-shelf-track">
+    <div ref={trackRef} className="go-shelf-track" data-nocms-component="testimonial-shelf.client">
       {children}
     </div>
   );

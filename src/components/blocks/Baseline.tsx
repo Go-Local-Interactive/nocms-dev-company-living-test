@@ -20,14 +20,14 @@ export function BannerBlock({ title, body, media }: BlockProps) {
             src={img}
             alt={mediaAlt(media)}
             className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-md"
-            data-payload-subfield="media"
+            data-payload-subfield="media" data-role="media"
           />
         )}
         <div>
           {title && (
             <h2
               data-payload-subfield="title"
-              className="font-heading text-3xl sm:text-4xl font-semibold text-text mb-4"
+              className="font-heading text-3xl sm:text-4xl font-semibold text-text mb-4" data-role="heading"
             >
               {title}
             </h2>
@@ -47,7 +47,7 @@ export function ContentBlock({ title, body }: BlockProps) {
         {title && (
           <h2
             data-payload-subfield="title"
-            className="font-heading text-3xl sm:text-4xl font-semibold text-text mb-6"
+            className="font-heading text-3xl sm:text-4xl font-semibold text-text mb-6" data-role="heading-2"
           >
             {title}
           </h2>
@@ -66,7 +66,7 @@ export function RowGroupBlock({ title, body }: BlockProps) {
         {title && (
           <h2
             data-payload-subfield="title"
-            className="font-heading text-3xl font-semibold text-text mb-8 text-center"
+            className="font-heading text-3xl font-semibold text-text mb-8 text-center" data-role="heading-3"
           >
             {title}
           </h2>
@@ -88,7 +88,7 @@ export function CodeBlock({ title, body }: BlockProps) {
         {title && (
           <h2
             data-payload-subfield="title"
-            className="font-heading text-xl font-semibold text-text mb-3"
+            className="font-heading text-xl font-semibold text-text mb-3" data-role="heading-4"
           >
             {title}
           </h2>
@@ -113,7 +113,7 @@ export function FaqBlock({ title, body }: BlockProps) {
         {title && (
           <h2
             data-payload-subfield="title"
-            className="font-heading text-3xl sm:text-4xl font-semibold text-text text-center mb-12"
+            className="font-heading text-3xl sm:text-4xl font-semibold text-text text-center mb-12" data-role="heading-5"
           >
             {title}
           </h2>
@@ -127,11 +127,11 @@ export function FaqBlock({ title, body }: BlockProps) {
               <details key={i} className="group py-5">
                 <summary className="flex items-start justify-between gap-4 cursor-pointer list-none font-heading text-lg font-semibold text-text">
                   <span>{p.q}</span>
-                  <span className="text-2xl text-primary transition-transform group-open:rotate-45 select-none leading-none">
+                  <span className="text-2xl text-primary transition-transform group-open:rotate-45 select-none leading-none" data-role="text">
                     +
                   </span>
                 </summary>
-                <p className="mt-3 font-body text-base text-muted leading-relaxed">{p.a}</p>
+                <p className="mt-3 font-body text-base text-muted leading-relaxed" data-role="subheading">{p.a}</p>
               </details>
             ))}
           </div>
@@ -155,7 +155,7 @@ export function MediaBlockBlock({ title, media }: BlockProps) {
             src={img}
             alt={mediaAlt(media)}
             className="w-full h-auto rounded-2xl shadow-md"
-            data-payload-subfield="media"
+            data-payload-subfield="media" data-role="media-2"
           />
         ) : (
           // Placeholder keeps the block clickable so the inspector can open
@@ -164,7 +164,7 @@ export function MediaBlockBlock({ title, media }: BlockProps) {
             data-payload-subfield="media"
             className="aspect-[16/9] w-full rounded-2xl border-2 border-dashed border-text/15 bg-surface flex items-center justify-center text-muted"
           >
-            <span className="font-body text-sm">Click to add an image</span>
+            <span className="font-body text-sm" data-role="text-2">Click to add an image</span>
           </div>
         )}
         {title && (

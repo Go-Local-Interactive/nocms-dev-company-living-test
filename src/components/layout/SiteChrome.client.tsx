@@ -25,7 +25,7 @@ import { getChromeVariant } from "@/lib/nav.config";
 
 export function SiteHeaderSlot() {
   const variant = getChromeVariant(usePathname());
-  return <Header variant={variant} />;
+  return <Header variant={variant} data-nocms-component="site-chrome.client" />;
 }
 
 export function SiteFooterSlot() {

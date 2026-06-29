@@ -116,7 +116,7 @@ export function FloorPlanCardBlock({ title, body, media, settings }: BlockProps)
               src={photo}
               alt={mediaAlt(media) || title || "Floor plan"}
               className="w-full aspect-[4/3] object-cover rounded-[--radius] shadow-lg"
-              loading="eager"
+              loading="eager" data-role="media"
             />
           ) : (
             <div
@@ -174,7 +174,7 @@ export function FloorPlanCardBlock({ title, body, media, settings }: BlockProps)
                     >
                       <span
                         aria-hidden="true"
-                        className="mt-0.5 shrink-0 font-bold text-primary"
+                        className="mt-0.5 shrink-0 font-bold text-primary" data-role="text"
                       >
                         &#10003;
                       </span>
@@ -195,13 +195,13 @@ export function FloorPlanCardBlock({ title, body, media, settings }: BlockProps)
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="/schedule-tour"
-              className="inline-flex items-center justify-center bg-secondary text-white font-semibold px-8 py-4 rounded-[--radius] text-base shadow-lg hover:bg-secondary-dark hover:shadow-xl hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center bg-secondary text-white font-semibold px-8 py-4 rounded-[--radius] text-base shadow-lg hover:bg-secondary-dark hover:shadow-xl hover:-translate-y-0.5 transition-all" data-role="cta"
             >
               Schedule a Tour
             </a>
             <a
               href="/request-pricing"
-              className="inline-flex items-center justify-center border-2 border-text/20 text-text hover:bg-surface font-medium px-8 py-4 rounded-[--radius] text-base transition-all"
+              className="inline-flex items-center justify-center border-2 border-text/20 text-text hover:bg-surface font-medium px-8 py-4 rounded-[--radius] text-base transition-all" data-role="text-2"
             >
               Request Pricing
             </a>

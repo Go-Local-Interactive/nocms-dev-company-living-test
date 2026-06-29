@@ -19,7 +19,7 @@ export function ScrollCue() {
   }
 
   return (
-    <div className="mt-12 flex justify-center">
+    <div className="mt-12 flex justify-center" data-nocms-component="scroll-cue.client">
       <button
         ref={ref}
         type="button"

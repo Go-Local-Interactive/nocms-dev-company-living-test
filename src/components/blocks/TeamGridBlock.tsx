@@ -139,7 +139,7 @@ export function TeamGridBlock({ title, body, mediaArray }: BlockProps) {
                     src={photoSrc}
                     alt={mediaAlt(photo) || m.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                    loading="lazy" data-role="media"
                   />
                 ) : (
                   <div
@@ -153,10 +153,10 @@ export function TeamGridBlock({ title, body, mediaArray }: BlockProps) {
                   className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-text/90 via-text/60 to-transparent"
                 />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-background">
-                  <h3 className="font-heading text-xl font-semibold leading-tight">{m.name}</h3>
+                  <h3 className="font-heading text-xl font-semibold leading-tight" data-role="heading-2">{m.name}</h3>
                   <p className="font-body text-sm mt-1 text-background/85">{m.role}</p>
                   {m.bio && (
-                    <p className="font-body text-sm mt-3 leading-relaxed text-background/80 max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500">
+                    <p className="font-body text-sm mt-3 leading-relaxed text-background/80 max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500" data-role="subheading-2">
                       {m.bio}
                     </p>
                   )}

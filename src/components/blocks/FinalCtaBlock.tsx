@@ -71,13 +71,13 @@ export function FinalCtaBlock({ title, body }: BlockProps) {
           <a
             href={DEFAULTS.tourHref}
             data-tour-trigger
-            className="btn btn-secondary px-10 py-4 max-md:w-full"
+            className="btn btn-secondary px-10 py-4 max-md:w-full" data-role="cta"
           >
             {DEFAULTS.tourCta}
           </a>
           <a
             href={DEFAULTS.pricingHref}
-            className="btn btn-outline px-10 py-4 max-md:w-full"
+            className="btn btn-outline px-10 py-4 max-md:w-full" data-role="cta-2"
           >
             {DEFAULTS.pricingCta}
           </a>
@@ -100,7 +100,7 @@ export function FinalCtaBlock({ title, body }: BlockProps) {
 
         <a
           href={telHref(phoneDisplay)}
-          className="inline-flex items-center gap-2 font-body text-base font-semibold text-[color-mix(in_srgb,var(--color-white)_90%,transparent)] transition-colors duration-200 hover:text-[var(--color-white)] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary-light)]"
+          className="inline-flex items-center gap-2 font-body text-base font-semibold text-[color-mix(in_srgb,var(--color-white)_90%,transparent)] transition-colors duration-200 hover:text-[var(--color-white)] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary-light)]" data-role="text"
         >
           <Phone className="h-[18px] w-[18px]" strokeWidth={2} aria-hidden="true" />
           Call us now: <span data-payload-subfield="contactPhone">{phoneDisplay}</span>

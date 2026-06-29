@@ -243,16 +243,16 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
               <li className="flex items-center">
                 <a
                   href="/"
-                  className="text-neutral-500 transition-colors hover:text-primary-dark"
+                  className="text-neutral-500 transition-colors hover:text-primary-dark" data-role="text"
                 >
                   Home
                 </a>
               </li>
               <li className="flex items-center">
-                <span aria-hidden="true" className="mx-2 text-neutral-500">
+                <span aria-hidden="true" className="mx-2 text-neutral-500" data-role="text-2">
                   /
                 </span>
-                <span aria-current="page" className="text-neutral-900">
+                <span aria-current="page" className="text-neutral-900" data-role="text-3">
                   Schedule a Tour
                 </span>
               </li>
@@ -351,7 +351,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                   aria-live="assertive"
                   className="mb-6 rounded-[var(--radius)] border-2 border-error bg-error-light p-4"
                 >
-                  <h3 className="mb-2 flex items-center gap-2 font-heading text-base font-bold text-error">
+                  <h3 className="mb-2 flex items-center gap-2 font-heading text-base font-bold text-error" data-role="heading-2">
                     <svg
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -381,10 +381,10 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
               <form onSubmit={handleSubmit} noValidate>
                 {/* Step 1 — About You */}
                 <div className={step === 1 ? "block" : "hidden"}>
-                  <h3 className="mb-1 text-left font-heading text-xl text-text">
+                  <h3 className="mb-1 text-left font-heading text-xl text-text" data-role="heading-3">
                     Tell Us About Yourself
                   </h3>
-                  <p className="mb-7 font-body text-base text-neutral-500">
+                  <p className="mb-7 font-body text-base text-neutral-500" data-role="subheading-2">
                     So we can personalize your visit and follow up with you.
                   </p>
 
@@ -453,7 +453,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                     <button
                       type="button"
                       onClick={() => handleContinue(1)}
-                      className="btn btn-secondary flex-1 px-6 py-3.5 text-base"
+                      className="btn btn-secondary flex-1 px-6 py-3.5 text-base" data-role="cta"
                     >
                       Continue
                     </button>
@@ -462,10 +462,10 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
 
                 {/* Step 2 — Tour Details */}
                 <div className={step === 2 ? "block" : "hidden"}>
-                  <h3 className="mb-1 text-left font-heading text-xl text-text">
+                  <h3 className="mb-1 text-left font-heading text-xl text-text" data-role="heading-4">
                     Tour Details
                   </h3>
-                  <p className="mb-7 font-body text-base text-neutral-500">
+                  <p className="mb-7 font-body text-base text-neutral-500" data-role="subheading-3">
                     Help us prepare the best experience for your visit.
                   </p>
 
@@ -524,14 +524,14 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                     <button
                       type="button"
                       onClick={() => goToStep(1)}
-                      className="btn flex-1 border-2 border-neutral-300 bg-transparent px-6 py-3.5 text-base text-neutral-700 hover:border-neutral-500 hover:bg-section-sage"
+                      className="btn flex-1 border-2 border-neutral-300 bg-transparent px-6 py-3.5 text-base text-neutral-700 hover:border-neutral-500 hover:bg-section-sage" data-role="text-4"
                     >
                       Back
                     </button>
                     <button
                       type="button"
                       onClick={() => handleContinue(2)}
-                      className="btn btn-secondary flex-1 px-6 py-3.5 text-base"
+                      className="btn btn-secondary flex-1 px-6 py-3.5 text-base" data-role="cta-2"
                     >
                       Continue
                     </button>
@@ -540,10 +540,10 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
 
                 {/* Step 3 — Confirmation */}
                 <div className={step === 3 ? "block" : "hidden"}>
-                  <h3 className="mb-1 text-left font-heading text-xl text-text">
+                  <h3 className="mb-1 text-left font-heading text-xl text-text" data-role="heading-5">
                     Review Your Information
                   </h3>
-                  <p className="mb-7 font-body text-base text-neutral-500">
+                  <p className="mb-7 font-body text-base text-neutral-500" data-role="subheading-4">
                     Please confirm everything looks correct before submitting.
                   </p>
 
@@ -562,7 +562,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                     <button
                       type="button"
                       onClick={() => goToStep(1)}
-                      className="mt-3 inline-block cursor-pointer border-0 bg-transparent font-body text-base font-semibold text-primary underline underline-offset-[3px] hover:text-secondary-dark"
+                      className="mt-3 inline-block cursor-pointer border-0 bg-transparent font-body text-base font-semibold text-primary underline underline-offset-[3px] hover:text-secondary-dark" data-role="text-5"
                     >
                       Edit my information
                     </button>
@@ -572,13 +572,13 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                     <button
                       type="button"
                       onClick={() => goToStep(2)}
-                      className="btn flex-1 border-2 border-neutral-300 bg-transparent px-6 py-3.5 text-base text-neutral-700 hover:border-neutral-500 hover:bg-section-sage"
+                      className="btn flex-1 border-2 border-neutral-300 bg-transparent px-6 py-3.5 text-base text-neutral-700 hover:border-neutral-500 hover:bg-section-sage" data-role="text-6"
                     >
                       Back
                     </button>
                     <button
                       type="submit"
-                      className="btn btn-secondary flex-1 px-6 py-3.5 text-base"
+                      className="btn btn-secondary flex-1 px-6 py-3.5 text-base" data-role="cta-3"
                     >
                       Request My Tour
                     </button>
@@ -586,7 +586,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                 </div>
               </form>
 
-              <p className="mt-4 flex items-center justify-center gap-1 text-center font-body text-base text-neutral-500">
+              <p className="mt-4 flex items-center justify-center gap-1 text-center font-body text-base text-neutral-500" data-role="subheading-5">
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -623,7 +623,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
 
               {/* What Happens Next */}
               <div className="mt-12 border-t border-section-sage pt-12">
-                <h3 className="mb-9 text-center font-heading text-2xl text-neutral-900">
+                <h3 className="mb-9 text-center font-heading text-2xl text-neutral-900" data-role="heading-6">
                   What Happens Next
                 </h3>
                 {NEXT_STEPS.map((s, i) => (
@@ -632,10 +632,10 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                       {i + 1}
                     </div>
                     <div>
-                      <h4 className="mb-1 font-heading text-base text-neutral-900">
+                      <h4 className="mb-1 font-heading text-base text-neutral-900" data-role="heading-7">
                         {s.title}
                       </h4>
-                      <p className="m-0 font-body text-base leading-[1.6] text-neutral-700">
+                      <p className="m-0 font-body text-base leading-[1.6] text-neutral-700" data-role="subheading-6">
                         {s.body}
                       </p>
                     </div>
@@ -645,14 +645,14 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
 
               {/* Testimonial */}
               <figure className="mt-10 rounded-xl border-l-4 border-primary bg-section-sage p-8">
-                <blockquote className="mb-4 font-heading text-lg italic leading-[1.7] text-neutral-700">
+                <blockquote className="mb-4 font-heading text-lg italic leading-[1.7] text-neutral-700" data-role="text-7">
                   &ldquo;From the moment we walked in, we felt like family. The
                   staff answered every question with patience, and Mom knew this
                   was the place before we even finished the tour.&rdquo;
                 </blockquote>
-                <figcaption className="font-body text-base font-semibold text-neutral-900">
+                <figcaption className="font-body text-base font-semibold text-neutral-900" data-role="text-8">
                   Margaret D.
-                  <span className="mt-0.5 block font-normal text-neutral-500">
+                  <span className="mt-0.5 block font-normal text-neutral-500" data-role="text-9">
                     Daughter of current resident
                   </span>
                 </figcaption>
@@ -660,7 +660,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
 
               {/* Alternative contact */}
               <div className="mt-10 border-t border-section-sage pt-10">
-                <h3 className="mb-5 text-center font-heading text-xl text-text">
+                <h3 className="mb-5 text-center font-heading text-xl text-text" data-role="heading-8">
                   Prefer to Reach Us Directly?
                 </h3>
                 <div className="flex items-center gap-4 border-b border-section-sage py-4">
@@ -679,7 +679,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                     </svg>
                   </div>
                   <div className="font-body text-base">
-                    <strong className="block text-neutral-900">Call Us</strong>
+                    <strong className="block text-neutral-900" data-role="text-10">Call Us</strong>
                     {skinConfig.contactPhone && (
                       <a
                         href={telHref(skinConfig.contactPhone)}
@@ -688,7 +688,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                         {skinConfig.contactPhone}
                       </a>
                     )}
-                    <span className="text-neutral-500">
+                    <span className="text-neutral-500" data-role="text-11">
                       {" "}
                       — Available 8am – 6pm daily
                     </span>
@@ -711,16 +711,16 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                     </svg>
                   </div>
                   <div className="font-body text-base">
-                    <strong className="block text-neutral-900">
+                    <strong className="block text-neutral-900" data-role="text-12">
                       Send a Message
                     </strong>
                     <a
                       href="/contact-us"
-                      className="text-primary underline underline-offset-[3px]"
+                      className="text-primary underline underline-offset-[3px]" data-role="text-13"
                     >
                       Contact Us Online
                     </a>
-                    <span className="text-neutral-500">
+                    <span className="text-neutral-500" data-role="text-14">
                       {" "}
                       — We respond within 24 hours
                     </span>
@@ -744,7 +744,7 @@ export function SplitFormBlock({ title, body, mediaArray }: BlockProps) {
                 alt={s.alt}
                 className={`absolute inset-0 block h-full w-full object-cover transition-opacity duration-[1200ms] ${
                   i === slide ? "opacity-100" : "opacity-0"
-                }`}
+                }`} data-role="media"
               />
             ))}
           </div>

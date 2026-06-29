@@ -324,7 +324,7 @@ export function IconCardGridBlock({ title, items, settings }: BlockProps) {
                 </span>
                 <h3
                   data-payload-subfield={`items.${i}.label`}
-                  className={`mb-2.5 font-heading text-[1.15rem] font-semibold ${cardTheme.heading}`}
+                  className={`mb-2.5 font-heading text-[1.15rem] font-semibold ${cardTheme.heading}`} data-role="heading-2"
                 >
                   {card.title}
                 </h3>

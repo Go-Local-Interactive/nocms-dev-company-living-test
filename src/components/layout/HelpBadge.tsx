@@ -32,7 +32,7 @@ export function HelpBadge() {
         />
         <Phone className="relative h-[22px] w-[22px]" aria-hidden="true" />
       </span>
-      <span className="hidden min-[481px]:inline">Need Help Now?</span>
+      <span className="hidden min-[481px]:inline" data-role="text">Need Help Now?</span>
     </a>
   );
 }

@@ -45,8 +45,8 @@ export default async function CommunityDetailPage({ params }: Props) {
   if (slug === "_placeholder") {
     return (
       <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-3xl font-semibold tracking-tight">Communities</h1>
-        <p className="mt-4 text-zinc-600">
+        <h1 className="text-3xl font-semibold tracking-tight" data-role="heading-2">Communities</h1>
+        <p className="mt-4 text-zinc-600" data-role="text">
           No communities are configured yet. Add a location record in your CMS
           to publish it here.
         </p>
@@ -75,7 +75,7 @@ export default async function CommunityDetailPage({ params }: Props) {
             <Link href="/communities" className="hover:text-primary transition-colors">
               Communities
             </Link>
-            <span className="mx-2">/</span>
+            <span className="mx-2" data-role="text-2">/</span>
             <span className="text-text">{name}</span>
           </nav>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">

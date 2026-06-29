@@ -143,7 +143,7 @@ export function AccordionBlock(props: BlockProps) {
       <TabbedAccordion
         categories={categories}
         title={title ?? undefined}
-        intro={intro}
+        intro={intro} data-nocms-component="accordion-block"
       />
     );
   }
@@ -202,7 +202,7 @@ export function AccordionBlock(props: BlockProps) {
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </summary>
-              <p className="px-6 pb-6 font-body text-base leading-[1.7] text-neutral-700 [@media(max-width:768px)]:px-5 [@media(max-width:768px)]:pb-5">
+              <p className="px-6 pb-6 font-body text-base leading-[1.7] text-neutral-700 [@media(max-width:768px)]:px-5 [@media(max-width:768px)]:pb-5" data-role="subheading-2">
                 {item.a}
               </p>
             </details>

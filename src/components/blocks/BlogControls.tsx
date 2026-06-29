@@ -33,7 +33,7 @@ export function BlogControls({
       method="get"
       role="search"
       className="contents"
-      onChange={onSortChange}
+      onChange={onSortChange} data-nocms-component="blog-controls"
     >
       {children}
     </form>

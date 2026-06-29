@@ -250,7 +250,7 @@ export function FeatureSectionsBlock({ title, body, mediaArray, settings }: Bloc
                       src={photoSrc}
                       alt={mediaAlt(photo) || row.title}
                       className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover/img:scale-[1.04]"
-                      loading="lazy"
+                      loading="lazy" data-role="media"
                     />
                   ) : (
                     <div
@@ -279,7 +279,7 @@ export function FeatureSectionsBlock({ title, body, mediaArray, settings }: Bloc
                   <span className={`font-body text-base font-semibold uppercase tracking-[0.06em] mb-2 ${labelColor}`}>
                     {row.label}
                   </span>
-                  <h3 className={`font-heading text-[1.75rem] font-bold leading-[1.25] mb-4 ${headingColor}`}>
+                  <h3 className={`font-heading text-[1.75rem] font-bold leading-[1.25] mb-4 ${headingColor}`} data-role="heading-2">
                     {row.title}
                   </h3>
                   <p className={`font-body text-lg leading-relaxed mb-6 ${bodyColor}`}>{row.description}</p>

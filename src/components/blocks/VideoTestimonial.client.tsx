@@ -56,7 +56,7 @@ export function VideoTestimonialPlayer({
   }, [playing]);
 
   return (
-    <div ref={slotRef} onClick={handleActivate} className="contents">
+    <div ref={slotRef} onClick={handleActivate} className="contents" data-nocms-component="video-testimonial.client">
       {playing ? (
         // eslint-disable-next-line jsx-a11y/media-has-caption -- caption <track> appended below when present
         <video

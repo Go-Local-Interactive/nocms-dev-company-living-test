@@ -210,13 +210,13 @@ export function TourWidget() {
           <h3
             id="tour-title"
             data-payload-subfield="tourHeading"
-            className="mb-2 font-heading text-2xl font-bold text-white"
+            className="mb-2 font-heading text-2xl font-bold text-white" data-role="heading"
           >
             Schedule a Tour
           </h3>
           <p
             data-payload-subfield="tourIntro"
-            className="text-base leading-snug text-white/85"
+            className="text-base leading-snug text-white/85" data-role="subheading"
           >
             We&apos;d love to show you around. Pick a time that works and
             we&apos;ll take care of the rest.
@@ -244,10 +244,10 @@ export function TourWidget() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <h4 className="mb-2 font-heading text-xl font-bold text-text">
+              <h4 className="mb-2 font-heading text-xl font-bold text-text" data-role="heading-2">
                 Tour Request Received!
               </h4>
-              <p className="text-base text-muted">
+              <p className="text-base text-muted" data-role="subheading-2">
                 We&apos;ll confirm your visit within 24 hours.
               </p>
             </div>
@@ -305,18 +305,18 @@ export function TourWidget() {
                 })}
                 <button
                   type="submit"
-                  className="mt-2 w-full cursor-pointer rounded-md bg-secondary px-4 py-4 text-base font-semibold text-white transition-[background-color,transform] hover:-translate-y-px hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-secondary"
+                  className="mt-2 w-full cursor-pointer rounded-md bg-secondary px-4 py-4 text-base font-semibold text-white transition-[background-color,transform] hover:-translate-y-px hover:bg-secondary-dark focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-secondary" data-role="cta"
                 >
                   Request My Tour
                 </button>
               </form>
-              <p className="mt-4 text-center text-base leading-snug text-muted">
+              <p className="mt-4 text-center text-base leading-snug text-muted" data-role="subheading-3">
                 No commitment — just a friendly visit. We&apos;ll confirm your
                 time within 24 hours.
               </p>
               <a
                 href="/schedule-tour"
-                className="mt-6 block border-t border-text/10 pt-5 text-center text-base font-semibold text-primary transition-colors hover:text-primary-dark"
+                className="mt-6 block border-t border-text/10 pt-5 text-center text-base font-semibold text-primary transition-colors hover:text-primary-dark" data-role="text"
               >
                 Want to tell us more? Visit the full tour page &rarr;
               </a>
