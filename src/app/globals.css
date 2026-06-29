@@ -1,0 +1,687 @@
+@import "tailwindcss";
+
+/* Don't scan the plan markdown in docs/ for utility classes — it contains
+   illustrative class strings (e.g. bg-[url(...)]) that aren't real styles. */
+@source not "../../docs";
+
+/* Fonts (Libre Baskerville + Open Sans) are loaded via a <link> in layout.tsx,
+   mirroring the Golden Oaks mockup; the --font-* tokens below resolve to them. */
+
+@theme {
+  /* ─── Brand primitives — EXACT Golden Oaks palette (brand-clone-config.json).
+     Re-skinned per project by the NoCMS design-brief overlay at scaffold time;
+     change ONLY these bases and the derived shades below follow. ─── */
+  --color-primary: #4D654C;
+  --color-secondary: #AD6045;
+  --color-accent: #C4882B;
+  --color-cool: #7383A0;
+  --color-text: #2C2218;
+  --color-warm: #E8DCC8;
+  --color-background: #FAF6EF;
+  --color-surface: #F7F2EB;
+  --color-muted: #7A6E62;
+
+  /* ─── Derived shades — re-derived from the new bases (mockup color-mix ratios).
+     primary-dark = 70% primary + black; primary-light = 21% primary + white; etc. ─── */
+  --color-primary-dark: #364735;
+  --color-primary-light: #DADFD9;
+  --color-secondary-dark: #8A4D37;
+  --color-secondary-light: #EDDCD6;
+  --color-accent-light: #F1E2CC;
+  --color-accent-dark: #936620;       /* mockup --accent-dark (75% accent + black) */
+  --color-sand: #E8DCC8;
+  --color-linen: #F7F2EB;
+  --color-warm-brown: #704330;
+  --color-rich-brown: #4C3223;
+
+  /* ─── Semantic section + accent tokens — recurring surfaces so components
+     never reach for a literal. Sourced from the mockup .section-* rules.
+     dark = primary-dark GREEN (.icon-cards-dark, hero dark modifiers); brown =
+     rich-brown (.section-dark/footer, .icon-cards-brown) — both need white text. ─── */
+  --color-section-cream: #F9F6F0;     /* .section-cream     → --cream  (27% warm + white) */
+  --color-section-sage: #F3F4F2;      /* .section-sage      → --sage-whisper (7% primary + white) */
+  --color-section-light: #F7F2EB;     /* .section-light     → --linen  (36% warm + white) */
+  --color-section-sand: #E8DCC8;      /* .section-sand      → --sand   (brand warm) */
+  --color-section-sage-deep: #DADFD9; /* .section-sage-deep → --primary-light (21% primary + white) */
+  --color-section-brown: #4C3223;     /* .section-brown     → --rich-brown (75% text + secondary) */
+  --color-section-dark: #364735;      /* .section-dark      → --primary-dark (dark green) */
+  --color-overline: #4D654C;          /* .page-label eyebrow → --primary (green) */
+  --color-leaf-pattern-tint: #F9F6F0; /* cream wash behind leaf-pattern.jpg */
+  --color-white: #FFFFFF;             /* explicit white token (mockup --white) */
+
+  /* ─── Neutral ramp — text tinted toward white (mockup --neutral-* from
+     --brand-neutral = --color-text). Interior heroes / breadcrumbs read these
+     so they never reach for a literal grey. Exposed as Tailwind utilities
+     (text-neutral-700, border-neutral-300, …) AND var(--color-neutral-*). ─── */
+  --color-neutral-900: #2C2218;       /* = --color-text (mockup --neutral-900) */
+  --color-neutral-700: color-mix(in srgb, var(--color-text) 87%, white);
+  --color-neutral-500: color-mix(in srgb, var(--color-text) 66%, white);
+  --color-neutral-400: color-mix(in srgb, var(--color-text) 47%, white);
+  --color-neutral-300: color-mix(in srgb, var(--color-text) 29%, white);
+  --color-neutral-200: color-mix(in srgb, var(--color-text) 18%, white);
+  --color-neutral-100: color-mix(in srgb, var(--color-text) 11%, white);
+
+  /* Hero overlay gradient tokens live in :root (not @theme) — see the note
+     there. They're consumed only via `var(--color-hero-overlay-*)` in inline
+     styles, and one name is built dynamically (from / from-soft), so Tailwind's
+     content scanner can't see it and would tree-shake an @theme var. A plain
+     :root declaration is always emitted. */
+
+  /* ─── Form feedback states — mockup --error / --success ramp. Consumed by the
+     Tour Widget + Exit Intent validation (focus rings, error/success borders).
+     error-light = 6% error + white; success-light = 8% success + white. ─── */
+  --color-error: #C2453D;             /* mockup --error */
+  --color-error-light: #FBF4F3;       /* mockup --error-light (6% error + white) */
+  --color-success: #2E7D32;           /* mockup --success */
+  --color-success-light: #EEF5EF;     /* mockup --success-light (8% success + white) */
+
+  --font-heading: "Libre Baskerville", ui-serif, Georgia, serif;
+  --font-body: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ─── Help Badge pulse ring (mockup .help-badge-icon::after `badge-pulse`):
+     2.5s ease-out expanding ring, scale 0.9→1.3 fading out. Exposed as the
+     `animate-badge-pulse` utility. ─── */
+  --animate-badge-pulse: badge-pulse 2.5s ease-out infinite;
+  @keyframes badge-pulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    70% { transform: scale(1.3); opacity: 0; }
+    100% { transform: scale(1.3); opacity: 0; }
+  }
+
+  /* ─── Crisis Band pulse ring (mockup .crisis-icon::after `crisis-pulse`):
+     a 2.5s ease-out ring expanding scale 0.95→1.15 and fading out around the
+     80px secondary icon circle. Exposed as `animate-crisis-pulse`; the ring
+     border color is the --color-secondary token (set on the element). ─── */
+  --animate-crisis-pulse: crisis-pulse 2.5s ease-out infinite;
+  @keyframes crisis-pulse {
+    0% { transform: scale(0.95); opacity: 0.6; }
+    70% { transform: scale(1.15); opacity: 0; }
+    100% { transform: scale(1.15); opacity: 0; }
+  }
+
+  /* ─── Hero scroll-cue (mockup .scroll-cue `scrollBounce` + inner wheel
+     `wheelPulse`): the fullbleed hero's animated mouse-icon button gently
+     bobs while the inner wheel pulses. Exposed as `animate-scroll-bounce`
+     (on the button) and `animate-wheel-pulse` (on the wheel rect). ─── */
+  --animate-scroll-bounce: scrollBounce 2.5s ease-in-out infinite;
+  --animate-wheel-pulse: wheelPulse 2s ease-in-out infinite;
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+  @keyframes wheelPulse {
+    0%, 100% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.4; transform: translateY(3px); }
+  }
+}
+
+/* ─── Shape + elevation scale (mockup --radius / box-shadow values).
+   Plain custom properties (not color tokens) so the base patterns below can
+   reference them without bloating the @theme color set. ─── */
+:root {
+  --radius: 6px;
+  --radius-pill: 100px;
+  /* Elevation — neutral (#2C2218 = --color-text) tinted shadows from the mockup. */
+  --shadow-sm: 0 1px 4px rgba(44, 34, 24, 0.1);
+  --shadow-md: 0 4px 16px rgba(44, 34, 24, 0.08);
+  --shadow-lg: 0 12px 40px rgba(44, 34, 24, 0.15);
+
+  /* ─── Hero overlay gradient (mockup .hero--immersive / .page-hero ::before).
+     Mockup literals: green rgb(62,90,61) @ 0.65 (video) / 0.60 (fullbleed) →
+     brown rgb(44,34,24) @ 0.70. Re-derived from the BRAND tokens (so the re-skin
+     flip-test re-themes the overlay) with alpha baked in via color-mix →
+     transparent. Kept in :root (NOT @theme) because they're consumed only as
+     `var(--color-hero-overlay-*)` in inline styles — and the video/fullbleed
+     name is built dynamically (`from`/`from-soft`), so it appears in no scanned
+     file and Tailwind would tree-shake it from @theme. :root is always emitted. */
+  --color-hero-overlay-green: color-mix(in srgb, var(--color-primary-dark) 65%, var(--color-primary)); /* ≈ rgb(62,90,61) opaque base */
+  --color-hero-overlay-from: color-mix(in srgb, var(--color-hero-overlay-green) 65%, transparent);      /* video top stop, alpha 0.65 */
+  --color-hero-overlay-from-soft: color-mix(in srgb, var(--color-hero-overlay-green) 60%, transparent); /* fullbleed top stop, alpha 0.60 */
+  --color-hero-overlay-to: color-mix(in srgb, var(--color-text) 70%, transparent);                      /* bottom stop, brown alpha 0.70 */
+}
+
+/* ─── Smooth in-page scrolling (mockup global.css `html { scroll-behavior }`).
+   The Care-Level Nav and any `#care-*` anchor TOC rely on this; `scroll-mt`
+   offsets the ~80px sticky header so a scrolled-to section isn't hidden
+   beneath it. ─── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  :target,
+  [id^="care-"] {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* ===== TOKEN-DRIVEN BASE PATTERNS (ported 1:1 from the mockup global.css) ===== */
+
+@layer components {
+  /* --- Section surface utilities (mockup .section-* rules) --- */
+  .section-cream     { background-color: var(--color-section-cream); }
+  .section-sage      { background-color: var(--color-section-sage); }
+  .section-light     { background-color: var(--color-section-light); }
+  .section-sand      { background-color: var(--color-section-sand); }
+  .section-sage-deep { background-color: var(--color-section-sage-deep); }
+  /* Dark surfaces (green / rich-brown) — light text for contrast */
+  .section-brown { background-color: var(--color-section-brown); color: var(--color-white); }
+  .section-dark  { background-color: var(--color-section-dark); color: var(--color-white); }
+  .section-brown :is(h1, h2, h3, h4, h5, h6),
+  .section-dark :is(h1, h2, h3, h4, h5, h6) { color: var(--color-white); }
+
+  /* --- Overline eyebrow (mockup .page-label): uppercase kicker above a heading --- */
+  .overline {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-overline);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  /* --- Page separator (mockup .error-divider): centered label flanked by rule lines --- */
+  .page-separator {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .page-separator::before,
+  .page-separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: color-mix(in srgb, var(--color-text) 29%, white);
+  }
+  .page-separator > span {
+    font-size: 16px;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--color-text) 47%, white);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* --- Leaf-pattern section background (mockup .bottom-cta): photo + cream wash --- */
+  .leaf-pattern {
+    position: relative;
+    background:
+      var(--color-leaf-pattern-tint)
+      url("/golden-oaks/leaf-pattern.jpg") center / cover no-repeat;
+  }
+  .leaf-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--color-background) 95%, transparent);
+  }
+  .leaf-pattern > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- Branch-pattern section background (mockup .has-branch-bg): a near-white
+     band with a faint, centered branch-pattern.png overlay behind the content.
+     Used by content-intro / icon-card-grid (brown) / card-carousel sections.
+     The band tint is the cream `--color-leaf-pattern-tint` token (never a
+     literal); the overlay sits at z-0 with the inner `.container` lifted to
+     z-1. --- */
+  .has-branch-bg {
+    position: relative;
+    background-color: var(--color-leaf-pattern-tint);
+  }
+  .has-branch-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/golden-oaks/branch-pattern.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .has-branch-bg > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- Card / shadow / radius scale --- */
+  .card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* --- Buttons (mockup .btn family, radius 6px) --- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+  .btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-secondary) 30%, transparent);
+  }
+  /* Cream button — for use on dark / photographic backgrounds */
+  .btn-cream {
+    background-color: var(--color-section-cream);
+    color: var(--color-primary-dark);
+  }
+  .btn-cream:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary-dark);
+    transform: translateY(-2px);
+  }
+  /* Outline — light text/border for dark backgrounds */
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+  }
+  /* Outline-dark — primary text/border for light backgrounds */
+  .btn-outline-dark {
+    background-color: transparent;
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+  }
+  .btn-outline-dark:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+  .btn-outline:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  /* --- Captioned figure (mockup .captioned-figure): full-width image with an
+     overlaid bottom-gradient caption. Shared by article bodies and the
+     content-blocks `cb-photo` sub-block. The scrim is the `--color-text` brown
+     at decreasing alpha via `color-mix` (never a literal rgba) so it re-skins. --- */
+  .captioned-figure {
+    position: relative;
+    margin: 40px 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .captioned-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .captioned-figure figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px 18px;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-text) 75%, transparent) 0%,
+      color-mix(in srgb, var(--color-text) 35%, transparent) 60%,
+      transparent 100%
+    );
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  /* --- Pull quote (mockup .pullquote): a left-bordered sage-tinted blockquote
+     with a serif italic quote and a small cite. Shared utility used by article
+     bodies and the content-blocks `pullquote` sub-block. All token-driven —
+     border + cite + quote color re-theme with the primary flip. --- */
+  .pullquote {
+    margin: 48px 0;
+    padding: 32px 40px;
+    border-left: 4px solid var(--color-primary);
+    background: var(--color-section-sage);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .pullquote blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--color-primary-dark);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .pullquote cite {
+    display: block;
+    margin-top: 16px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-neutral-500);
+  }
+  @media (max-width: 480px) {
+    .pullquote {
+      padding: 24px 20px;
+      margin: 36px 0;
+    }
+    .pullquote blockquote {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* --- Intro paragraph + drop cap (mockup .content-intro / .has-drop-cap):
+     used by the toprow / stats compact heroes. 20px/1.8 body copy; the first
+     letter floats as a Libre-Baskerville drop cap in the primary green
+     (--dark modifier recolors it to accent-light on dark bands). --- */
+  .content-intro {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--color-neutral-700);
+  }
+  .has-drop-cap::first-letter {
+    float: left;
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+  .has-drop-cap--dark::first-letter {
+    color: var(--color-accent-light);
+  }
+  @media (max-width: 480px) {
+    .has-drop-cap::first-letter {
+      font-size: 3.2rem;
+      margin-top: 4px;
+    }
+  }
+
+  /* --- Hero scroll-cue button (mockup .scroll-cue): 56×56 rounded-12 tile,
+     primary-dark fill, translucent white border; bobs via --animate-scroll-bounce.
+     Token-driven so the re-skin flip-test re-themes it. --- */
+  .scroll-cue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    background: var(--color-primary-dark);
+    border: 2px solid color-mix(in srgb, var(--color-white) 25%, transparent);
+    border-radius: 12px;
+    padding: 0;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease,
+      box-shadow 0.3s ease;
+    animation: var(--animate-scroll-bounce);
+  }
+  .scroll-cue:hover {
+    background: var(--color-primary);
+    border-color: color-mix(in srgb, var(--color-white) 50%, transparent);
+    box-shadow: var(--shadow-lg);
+  }
+  .scroll-cue svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--color-white);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .scroll-cue .scroll-wheel {
+    stroke: none;
+    fill: var(--color-white);
+    animation: var(--animate-wheel-pulse);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-cue,
+    .scroll-cue .scroll-wheel {
+      animation: none;
+    }
+  }
+
+  /* --- Testimonial shelf marquee (mockup `.shelf-track`): a horizontally
+     scrolling row of review cards. The track auto-scrolls left via
+     `go-shelf-scroll` (translateX → -50%, seamless once the client island
+     `TestimonialShelfTrack` clones the cards), pauses on hover, and stops
+     entirely under `prefers-reduced-motion`. Token-driven; no literals. --- */
+  .go-shelf-track {
+    display: flex;
+    gap: 28px;
+    width: max-content;
+    animation: go-shelf-scroll 30s linear infinite;
+  }
+  .go-shelf-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes go-shelf-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .go-shelf-track {
+      animation: none;
+    }
+  }
+
+  /* --- Gallery shelf (mockup `.gallery-shelf` / `.gallery-track`): the
+     "Life at Golden Oaks" auto-scrolling horizontal photo strip. The track is
+     rendered TWICE server-side (2nd copy aria-hidden) and slides left via
+     `gallery-scroll` (translateX → -50%, seamless), pausing on hover. Under
+     `prefers-reduced-motion` the animation stops and the track wraps to a
+     centered grid (the duplicate is hidden via `motion-reduce:hidden` on the
+     element). Token-free — pure transform. --- */
+  @keyframes gallery-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* --- Featured card on the dark blog hero (mockup
+     `.blog-featured-hero .blog-card-featured` overrides): strips the white
+     card chrome and recolors the contents for the dark-green band. Scoped to a
+     `.blog-on-dark` wrapper so it ONLY applies inside the landing hero — the
+     same `<BlogCard variant="featured">` renders normally everywhere else
+     (ONE component, no extra variant). Targets the card's stable
+     `data-nocms-component`/`data-role` hooks. All token-driven (white/sand/
+     accent at color-mix alphas) so the re-skin flip-test still re-themes it. --- */
+  .blog-on-dark [data-nocms-component="blog-card"] {
+    background: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+  }
+  .blog-on-dark [data-nocms-component="blog-card"]:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+  /* image keeps its rounded corners */
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="media"] {
+    border-radius: var(--radius);
+  }
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="tag"] {
+    background: color-mix(in srgb, var(--color-white) 15%, transparent);
+    color: var(--color-accent);
+  }
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="heading"],
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="heading"] a {
+    color: var(--color-white);
+  }
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="body"] {
+    color: var(--color-sand);
+    opacity: 0.85;
+  }
+  /* meta: author name white, read-time muted sand */
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="meta"] .text-text {
+    color: var(--color-white);
+  }
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="meta"] .text-muted {
+    color: var(--color-sand);
+    opacity: 0.7;
+  }
+  .blog-on-dark [data-nocms-component="blog-card"] [data-role="meta"] img {
+    border-color: color-mix(in srgb, var(--color-white) 25%, transparent);
+  }
+  /* corner arrow tile: translucent white, lighter on hover */
+  .blog-on-dark [data-nocms-component="blog-card"] a[aria-label^="Read article"] {
+    background: color-mix(in srgb, var(--color-white) 15%, transparent);
+  }
+  .blog-on-dark [data-nocms-component="blog-card"]:hover a[aria-label^="Read article"] {
+    background: color-mix(in srgb, var(--color-white) 25%, transparent);
+  }
+  .blog-on-dark [data-nocms-component="blog-card"] a[aria-label^="Read article"] svg {
+    color: var(--color-white);
+  }
+
+  /* --- Article body / prose (mockup `.article-body`): styles the
+     `LexicalRichText` output for the blog-article route. The lexical renderer
+     emits bare <p>/<h2>/<h3>/<a>/<ul>/<ol>/<blockquote>, so the typography is
+     applied via descendant selectors here (no per-node classes needed). The
+     lead paragraph gets a Libre-Baskerville drop cap (first <p>). ADA: body
+     links stay underlined. ALL token-driven — h2/h3 color, link color,
+     blockquote accent re-theme with the --color-primary flip; no literals. --- */
+  .article-body {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-neutral-700);
+  }
+  .article-body h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-neutral-900);
+    margin-top: 48px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .article-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-neutral-900);
+    margin-top: 36px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .article-body p {
+    margin-bottom: 24px;
+  }
+  .article-body a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  .article-body a:hover {
+    color: var(--color-primary-dark);
+  }
+  /* Drop cap on the lead paragraph (mockup .has-drop-cap on the first <p>). */
+  .article-body > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+  .article-body ul,
+  .article-body ol {
+    margin: 24px 0;
+    padding-left: 24px;
+  }
+  .article-body li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .article-body ul li::marker {
+    color: var(--color-primary);
+  }
+  .article-body ol li::marker {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  /* Blockquote (mockup folds these into .pullquote; style bare quotes too so a
+     lexical <blockquote> matches the pull-quote accent). */
+  .article-body blockquote {
+    margin: 48px 0;
+    padding: 8px 0 8px 32px;
+    border-left: 4px solid var(--color-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--color-primary-dark);
+    line-height: 1.5;
+  }
+  @media (max-width: 768px) {
+    .article-body {
+      font-size: 16px;
+    }
+    .article-body h2 {
+      font-size: 1.5rem;
+      margin-top: 36px;
+    }
+    .article-body h3 {
+      font-size: 1.15rem;
+      margin-top: 28px;
+    }
+    .article-body > p:first-of-type::first-letter {
+      font-size: 3.2rem;
+      margin-top: 4px;
+    }
+  }
+
+  /* --- Leaf-texture overlay (mockup `.has-leaf-bg::after`): a faint, tiled
+     `leaf-pattern.jpg` wash (500px tile, 0.07 opacity) behind a section's
+     content. Used by the gallery shelf. The host sets `position:relative` +
+     `overflow:hidden`; its `.container` children lift above the overlay. --- */
+  .has-leaf-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/golden-oaks/leaf-pattern.jpg");
+    background-size: 500px 500px;
+    background-repeat: repeat;
+    opacity: 0.07;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
